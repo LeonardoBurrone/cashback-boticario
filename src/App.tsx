@@ -1,8 +1,20 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import styled from 'styled-components';
 import Store from './Store';
 import logo from './logo.svg';
 import './App.css';
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
 
 const App: React.FunctionComponent = () => {
   return (
@@ -17,6 +29,9 @@ const App: React.FunctionComponent = () => {
             Learn React
           </a>
         </header>
+        <Wrapper>
+          <Title>Hello World!</Title>
+        </Wrapper>
       </div>
     </Provider>
   );
