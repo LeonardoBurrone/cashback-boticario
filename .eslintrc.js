@@ -24,13 +24,6 @@ module.exports = {
   ],
   'rules': {
     '@typescript-eslint/member-ordering': 'error',
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      {
-        'avoidEscape': true
-      }
-    ],
     '@typescript-eslint/unified-signatures': 'error',
     'constructor-super': 'error',
     'curly': 'error',
