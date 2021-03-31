@@ -29,7 +29,6 @@ module.exports = {
     'curly': 'error',
     'dot-notation': 'error',
     'eqeqeq': ['error', 'smart'],
-    'indent': ['error', 2],
     'no-trailing-spaces': 'error',
     'no-var': 'error',
     'quotes': [
