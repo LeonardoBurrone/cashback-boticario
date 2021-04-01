@@ -7,6 +7,7 @@ import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
 
 import { loginAction } from '../../Ducks/Login/Actions';
+import CentralNavigationService from '../../Services/Navigation';
 
 // TODO: colocar Logo
 
@@ -38,7 +39,8 @@ const Login: React.FunctionComponent = () => {
         username
       })
     );
-    // TODO: fazer
+    // TODO: remover
+    CentralNavigationService.navigate('/main');
   };
 
   return (
