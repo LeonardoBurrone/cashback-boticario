@@ -39,7 +39,7 @@ const SignUp: React.FunctionComponent = () => {
     updateState[type](value);
   };
 
-  const signIn = () => {
+  const signUp = () => {
     // TODO: fazer
   };
 
@@ -64,7 +64,7 @@ const SignUp: React.FunctionComponent = () => {
           username={username}
           usernameError={usernameError}
         />
-        <Footer password={password} signIn={signIn} username={username} />
+        <Footer document={document} email={email} password={password} signUp={signUp} username={username} />
       </CBContent>
     </CBContainer>
   );

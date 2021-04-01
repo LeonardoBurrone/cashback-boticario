@@ -4,8 +4,10 @@ import React from 'react';
 import { CBContainer, CBGrid, CBLink } from './styles';
 
 type Props = {
+  document: string;
+  email: string;
   password: string;
-  signIn: () => void;
+  signUp: () => void;
   username: string;
 };
 
@@ -14,11 +16,15 @@ const Footer: React.FunctionComponent<Props> = (props: Props) => {
     <CBContainer>
       <CBGrid>
         <Grid container alignItems={'center'} justify={'flex-end'} spacing={3}>
-          <CBLink to={'/sign-up'}>
-            <Button variant={'text'}>Cadastrar conta</Button>
+          <CBLink to={'/'}>
+            <Button variant={'text'}>Voltar</Button>
           </CBLink>
-          <Button onClick={props.signIn} variant={'contained'} disabled={!props.password || !props.username}>
-            Entrar
+          <Button
+            onClick={props.signUp}
+            variant={'contained'}
+            disabled={!props.document || !props.email || !props.password || !props.username}
+          >
+            Cadastrar
           </Button>
         </Grid>
       </CBGrid>
