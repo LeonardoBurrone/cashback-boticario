@@ -15,9 +15,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const RootDiv = styled.div`
-  display: flex;
-  min-height: 100%;
+const RootDiv = styled('div')`
+  && {
+    display: flex;
+    min-height: 100%;
+  }
 `;
 
 export { GlobalStyle, RootDiv };

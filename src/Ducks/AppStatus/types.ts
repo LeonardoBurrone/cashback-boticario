@@ -10,5 +10,3 @@ export type ChangeLoadingAction = {
   payload: boolean;
   type: typeof AppStatusActionTypes.CHANGE_LOADING;
 };
-
-export type AppStatusAction = ChangeLoadingAction;

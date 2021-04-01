@@ -1,16 +1,13 @@
 // TODO: testar reducer
 import { Reducer } from 'redux';
 
-import { AppStatusAction, AppStatusActionTypes, AppStatusState } from './types';
+import { AppStatusActionTypes, AppStatusState } from './types';
 
 export const initialState: AppStatusState = {
   loading: false
 };
 
-export const appStatusReducer: Reducer<AppStatusState, AppStatusAction> = (
-  state = initialState,
-  action: AppStatusAction
-): AppStatusState => {
+export const appStatusReducer: Reducer<AppStatusState> = (state = initialState, action): AppStatusState => {
   const { payload } = action;
 
   switch (action.type) {
