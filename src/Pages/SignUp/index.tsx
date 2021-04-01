@@ -7,12 +7,24 @@ import { CBContainer, CBContent, Logo, Title } from './styles';
 
 // TODO: colocar Logo
 
-const Login: React.FunctionComponent = () => {
-  const [password, setPassword] = useState<string>('');
-  const [passwordError, setPasswordError] = useState<string>('');
+const SignUp: React.FunctionComponent = () => {
+  const [document, setDocument] = useState<string>('');
+  const [documentError, setDocumentError] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
   const [username, setUsername] = useState<string>('');
   const [usernameError, setUsernameError] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<string>('');
   const updateState = {
+    document: (value: string) => {
+      setDocument(value);
+      setDocumentError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
+    email: (value: string) => {
+      setEmail(value);
+      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
     password: (value: string) => {
       setPassword(value);
       setPasswordError(value.length > 0 ? '' : 'Campo obrigatório');
@@ -23,7 +35,7 @@ const Login: React.FunctionComponent = () => {
     }
   };
 
-  const changeValue = (type: 'username' | 'password', value: string) => {
+  const changeValue = (type: 'document' | 'email' | 'username' | 'password', value: string) => {
     updateState[type](value);
   };
 
@@ -38,11 +50,15 @@ const Login: React.FunctionComponent = () => {
           <p>Logo</p>
         </Logo>
         <Title>
-          <p>Login</p>
+          <p>SignUp</p>
         </Title>
         <Divider />
         <Information
           changeValue={changeValue}
+          document={document}
+          documentError={documentError}
+          email={email}
+          emailError={emailError}
           password={password}
           passwordError={passwordError}
           username={username}
@@ -54,4 +70,4 @@ const Login: React.FunctionComponent = () => {
   );
 };
 
-export default Login;
+export default SignUp;
