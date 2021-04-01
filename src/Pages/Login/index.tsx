@@ -1,9 +1,13 @@
 import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Footer from './Footer';
 import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
+
+import { loginAction } from '../../Ducks/Login/Actions';
+import CentralNavigationService from '../../Services/Navigation';
 
 // TODO: colocar Logo
 
@@ -12,6 +16,7 @@ const Login: React.FunctionComponent = () => {
   const [passwordError, setPasswordError] = useState<string>('');
   const [username, setUsername] = useState<string>('');
   const [usernameError, setUsernameError] = useState<string>('');
+  const dispatch = useDispatch();
   const updateState = {
     password: (value: string) => {
       setPassword(value);
@@ -28,7 +33,14 @@ const Login: React.FunctionComponent = () => {
   };
 
   const signIn = () => {
-    // TODO: fazer
+    dispatch(
+      loginAction({
+        password,
+        username
+      })
+    );
+    // TODO: remover
+    CentralNavigationService.navigate('/main');
   };
 
   return (

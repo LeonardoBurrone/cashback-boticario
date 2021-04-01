@@ -2,12 +2,13 @@ import { Toolbar } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
 import RouteWithSubRoutes from './Components/RouteWithSubRoutes';
 
 import routesConfig from './Config/routes';
+import history from './Services/BrowserHistory';
 import darkTheme from './Styles/Themes/dark';
 import lightTheme from './Styles/Themes/light';
 import { GlobalStyle, RootDiv } from './styles';
@@ -31,7 +32,7 @@ const AppContent: React.FunctionComponent = () => {
         <AppBar isDarkMode={isDarkMode} isLoggedIn={true} toggleTheme={() => setIsDarkMode(!isDarkMode)} />
         <Toolbar />
         <RootDiv>
-          <Router>
+          <Router history={history}>
             <Switch>
               {routesConfig.map((route: any, index: number) => {
                 return <RouteWithSubRoutes key={index} {...route} />;
