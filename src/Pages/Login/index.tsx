@@ -1,7 +1,9 @@
+import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
 
+import Footer from './Footer';
 import Information from './Information';
-import { CBContainer, Logo } from './styles';
+import { CBContainer, CBContent, Logo, Title } from './styles';
 
 // TODO: colocar Logo
 
@@ -24,18 +26,29 @@ const Login: React.FunctionComponent = () => {
     }
   };
 
+  const signIn = () => {
+    // TODO: fazer
+  };
+
   return (
     <CBContainer maxWidth="sm">
-      <Logo>
-        <p>Logo</p>
-      </Logo>
-      <Information
-        changeValue={changeValue}
-        password={password}
-        passwordError={passwordError}
-        username={username}
-        usernameError={usernameError}
-      />
+      <CBContent elevation={3}>
+        <Logo>
+          <p>Logo</p>
+        </Logo>
+        <Title>
+          <p>Login</p>
+        </Title>
+        <Divider />
+        <Information
+          changeValue={changeValue}
+          password={password}
+          passwordError={passwordError}
+          username={username}
+          usernameError={usernameError}
+        />
+        <Footer password={password} signIn={signIn} username={username} />
+      </CBContent>
     </CBContainer>
   );
 };
