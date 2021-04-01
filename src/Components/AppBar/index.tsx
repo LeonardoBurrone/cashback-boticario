@@ -7,8 +7,9 @@ import React from 'react';
 import { CBButtonDiv } from './styles';
 
 type Props = {
-  darkTheme: boolean;
+  isDarkMode: boolean;
   isLoggedIn: boolean;
+  toggleTheme: () => void;
 };
 
 const AppBar: React.FunctionComponent<Props> = (props: Props) => {
@@ -22,8 +23,10 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
         )}
         <CBButtonDiv>
           <IconButton color="default">
-            {props.darkTheme ? <ToggleOn /> : <ToggleOffOutlined />}
-            <Button color="default">Contraste</Button>
+            {props.isDarkMode ? <ToggleOn /> : <ToggleOffOutlined />}
+            <Button color="default" onClick={props.toggleTheme}>
+              Contraste
+            </Button>
           </IconButton>
         </CBButtonDiv>
       </Toolbar>
