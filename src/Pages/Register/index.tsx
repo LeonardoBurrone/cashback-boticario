@@ -1,11 +1,18 @@
-import { Container } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React from 'react';
 
+import { CBContainer } from './styles';
+
+import { CBToolbar } from '../../Styles/Common';
+
 const Register: React.FunctionComponent = () => {
+  const theme = useTheme();
+
   return (
-    <Container fixed>
-      <p>Register</p>
-    </Container>
+    <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
+      <div>Register</div>
+    </CBContainer>
   );
 };
 
