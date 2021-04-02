@@ -6,6 +6,7 @@ import { Router, Switch } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
 import RouteWithSubRoutes from './Components/RouteWithSubRoutes';
+import SideMenu from './Components/SideMenu';
 
 import routesConfig from './Config/routes';
 import history from './Services/BrowserHistory';
@@ -18,6 +19,7 @@ import { GlobalStyle, RootDiv } from './styles';
 
 const AppContent: React.FunctionComponent = () => {
   const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
+  const [isSideMenuOpened, setIsSideMenuOpened] = React.useState<boolean>(true);
   const [themeProperties, setThemeProperties] = React.useState<Theme>({ ...lightTheme });
 
   React.useEffect(() => {
@@ -29,7 +31,14 @@ const AppContent: React.FunctionComponent = () => {
       <React.Fragment>
         <GlobalStyle />
         <CssBaseline />
-        <AppBar isDarkMode={isDarkMode} isLoggedIn={true} toggleTheme={() => setIsDarkMode(!isDarkMode)} />
+        <AppBar
+          isDarkMode={isDarkMode}
+          isLoggedIn={true}
+          isSideMenuOpened={isSideMenuOpened}
+          onOpenDrawer={() => setIsSideMenuOpened(true)}
+          toggleTheme={() => setIsDarkMode(!isDarkMode)}
+        />
+        <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
         <Toolbar />
         <RootDiv>
           <Router history={history}>
