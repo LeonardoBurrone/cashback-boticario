@@ -1,17 +1,25 @@
 import { useTheme } from '@material-ui/core/styles';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CBContainer } from './styles';
+import { CBContainer, CBContent } from './styles';
 
+import { fetchPurchasedItemsAction } from '../../Ducks/Dashboard/Actions';
 import { CBToolbar } from '../../Styles/Common';
 
 const Dashboard: React.FunctionComponent = () => {
+  const purchases = useSelector((state: reducers.rootReducer) => state.dashboard.purchases);
+  const dispatch = useDispatch();
   const theme = useTheme();
 
+  React.useEffect(() => {
+    dispatch(fetchPurchasedItemsAction());
+  }, []);
+
   return (
-    <CBContainer maxWidth="sm">
+    <CBContainer fixed>
       <CBToolbar theme={theme} />
-      <div>Dashboard</div>
+      <CBContent>Dashboard</CBContent>
     </CBContainer>
   );
 };
