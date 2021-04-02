@@ -5,7 +5,7 @@ export const menuOptions: MenuOption[] = [
   {
     description: 'Veja a listagem de suas compras cadastradas',
     icon: 'assessment',
-    path: '/main',
+    path: '/dashboard',
     title: 'Dashboard'
   },
   {

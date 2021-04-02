@@ -2,19 +2,17 @@ import { Toolbar } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
-import { Router, Switch } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
-import RouteWithSubRoutes from './Components/RouteWithSubRoutes';
 import SideMenu from './Components/SideMenu';
 
-import routesConfig from './Config/routes';
+import Routes from './Config/routes';
 import history from './Services/BrowserHistory';
 import darkTheme from './Styles/Themes/dark';
 import lightTheme from './Styles/Themes/light';
 import { GlobalStyle, RootDiv } from './styles';
 
-// TODO: tipar o any
 // TODO: mudar chave de Login no AppBar
 
 const AppContent: React.FunctionComponent = () => {
@@ -42,11 +40,7 @@ const AppContent: React.FunctionComponent = () => {
             />
             <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
             <Toolbar />
-            <Switch>
-              {routesConfig.map((route: any, index: number) => {
-                return <RouteWithSubRoutes key={index} {...route} />;
-              })}
-            </Switch>
+            <Routes />
           </Router>
         </RootDiv>
       </React.Fragment>

@@ -41,7 +41,7 @@ const Login: React.FunctionComponent = () => {
       })
     );
     // TODO: remover
-    history.push('/main');
+    history.push('/dashboard');
   };
 
   return (
