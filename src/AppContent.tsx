@@ -31,17 +31,17 @@ const AppContent: React.FunctionComponent = () => {
       <React.Fragment>
         <GlobalStyle />
         <CssBaseline />
-        <AppBar
-          isDarkMode={isDarkMode}
-          isLoggedIn={true}
-          isSideMenuOpened={isSideMenuOpened}
-          onOpenDrawer={() => setIsSideMenuOpened(true)}
-          toggleTheme={() => setIsDarkMode(!isDarkMode)}
-        />
-        <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
-        <Toolbar />
         <RootDiv>
           <Router history={history}>
+            <AppBar
+              isDarkMode={isDarkMode}
+              isLoggedIn={true}
+              isSideMenuOpened={isSideMenuOpened}
+              onOpenDrawer={() => setIsSideMenuOpened(true)}
+              toggleTheme={() => setIsDarkMode(!isDarkMode)}
+            />
+            <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
+            <Toolbar />
             <Switch>
               {routesConfig.map((route: any, index: number) => {
                 return <RouteWithSubRoutes key={index} {...route} />;
