@@ -1,9 +1,8 @@
 import { Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 
-import { CBTextField } from './styles';
-
 import ToggleVisibility from '../../../Components/ToggleVisibility';
+import { CBTextField } from '../../../Styles/Common';
 
 type Props = {
   changeValue: (type: 'username' | 'password', value: string) => void;
