@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Footer from './Footer';
 import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
 
+import Footer from '../../Components/Footer';
 import { loginAction } from '../../Ducks/Login/Actions';
 
 // TODO: colocar Logo
@@ -61,7 +61,14 @@ const Login: React.FunctionComponent = () => {
           username={username}
           usernameError={usernameError}
         />
-        <Footer password={password} signIn={signIn} username={username} />
+        <Footer
+          buttonDisabled={!password || !username}
+          onClick={signIn}
+          primaryButtonText={'Entrar'}
+          route={'/sign-up'}
+          secondaryButton={true}
+          secondaryButtonText={'Cadastrar conta'}
+        />
       </CBContent>
     </CBContainer>
   );
