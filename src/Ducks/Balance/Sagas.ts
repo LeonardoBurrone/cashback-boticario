@@ -17,7 +17,6 @@ export function* fetchBalance(action: FetchBalanceAction) {
       yield put(changeBalanceErrorAction(true));
     }
   } catch (error: any) {
-    // TODO: tratar erro
     yield put(changeBalanceAction(''));
     yield put(changeBalanceErrorAction(true));
   }
@@ -29,7 +28,6 @@ export function* mockedfetchBalance(action: FetchBalanceAction) {
     yield put(changeBalanceAction('100.5'));
     yield put(changeBalanceErrorAction(false));
   } catch (error: any) {
-    // TODO: tratar erro
     yield put(changeBalanceAction(''));
     yield put(changeBalanceErrorAction(true));
   }
