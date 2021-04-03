@@ -2,9 +2,10 @@ import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import Information from './Information';
-import { CBContainer, CBContent } from './styles';
+import { CBContainer } from './styles';
 
 import Footer from '../../Components/Footer';
+import { CBContent } from '../../Styles/Common';
 
 const Register: React.FunctionComponent = () => {
   const [code, setCode] = useState<string>('');

@@ -1,4 +1,4 @@
-import { Container, Paper } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import styled from 'styled-components';
 
 const CBContainer = styled(Container)`
@@ -6,18 +6,6 @@ const CBContainer = styled(Container)`
     background: #aaa543;
     display: flex;
     flex-flow: column;
-  }
-`;
-
-const CBContent = styled(Paper)`
-  && {
-    padding: 20px;
-    &.center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
   }
 `;
 
@@ -37,4 +25,4 @@ const Title = styled('p')`
   }
 `;
 
-export { CBContainer, CBContent, Logo, Title };
+export { CBContainer, Logo, Title };
