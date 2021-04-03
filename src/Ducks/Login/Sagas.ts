@@ -3,7 +3,12 @@ import { all, call, put, race, take, takeLatest } from 'redux-saga/effects';
 import { authenticateAction } from './Actions';
 import { AuthenticateAction, LoginAction, LoginActionTypes, LoginStackParamList, RaceReturnType } from './types';
 
-import { changeIsLoggedInAction } from '../AppStatus/Actions';
+import {
+  changeIsLoggedInAction,
+  changeLoadingAction,
+  changeLoadingMessageAction,
+  changeRequestErrorAction
+} from '../AppStatus/Actions';
 
 import CentralNavigationService from '../../Services/Navigation';
 import Api from '../../Services/Api';
@@ -19,6 +24,9 @@ export function* authenticate(action: AuthenticateAction) {
 
 export function* login(action: LoginAction) {
   try {
+    yield put(changeLoadingAction(true));
+    yield put(changeLoadingMessageAction('Fazendo login...'));
+
     const { email, password } = action.payload;
     const centralNavigationService = CentralNavigationService<LoginStackParamList>();
 
@@ -31,17 +39,25 @@ export function* login(action: LoginAction) {
     ]);
 
     if (authenticationSuccess) {
+      yield put(changeLoadingAction(false));
+      yield put(changeLoadingMessageAction(''));
+      yield put(changeRequestErrorAction(false));
       centralNavigationService.navigate('dashboard');
     } else {
-      // TODO: tratar erro
+      throw new Error('Erro ao fazer o login');
     }
   } catch (error: any) {
-    // TODO: tratar erro
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction(error.message));
+    yield put(changeRequestErrorAction(true));
   }
 }
 
 // TODO: remover função mockada
 export function* mockedLogin(action: LoginAction) {
+  yield put(changeLoadingAction(true));
+  yield put(changeLoadingMessageAction('Fazendo login...'));
+
   const { email, password } = action.payload;
   const centralNavigationService = CentralNavigationService<LoginStackParamList>();
 
@@ -52,9 +68,14 @@ export function* mockedLogin(action: LoginAction) {
   ]);
 
   if (authenticationSuccess) {
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction(''));
+    yield put(changeRequestErrorAction(false));
     centralNavigationService.navigate('dashboard');
   } else {
-    // TODO: tratar erro
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction('Erro ao fazer o login'));
+    yield put(changeRequestErrorAction(true));
   }
 }
 

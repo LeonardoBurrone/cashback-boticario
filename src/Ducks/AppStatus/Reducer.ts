@@ -6,7 +6,8 @@ import { AppStatusActionTypes, AppStatusState } from './types';
 export const initialState: AppStatusState = {
   isLoggedIn: false,
   loading: false,
-  loadingMessage: ''
+  loadingMessage: '',
+  requestFailed: false
 };
 
 export const appStatusReducer: Reducer<AppStatusState> = (state = initialState, action): AppStatusState => {
@@ -29,6 +30,12 @@ export const appStatusReducer: Reducer<AppStatusState> = (state = initialState, 
       return {
         ...state,
         loadingMessage: payload
+      };
+
+    case AppStatusActionTypes.CHANGE_REQUEST_FAILED:
+      return {
+        ...state,
+        requestFailed: payload
       };
 
     default:
