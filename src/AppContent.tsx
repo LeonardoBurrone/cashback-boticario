@@ -7,6 +7,7 @@ import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
 import SideMenu from './Components/SideMenu';
+import Load from './Pages/Load';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import SignUp from './Pages/SignUp';
@@ -32,6 +33,7 @@ const AppContent: React.FunctionComponent = () => {
         <GlobalStyle />
         <CssBaseline />
         <RootDiv>
+          <Load />
           <Router history={history}>
             <AppBar
               isDarkMode={isDarkMode}

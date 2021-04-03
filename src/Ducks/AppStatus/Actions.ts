@@ -1,5 +1,5 @@
 // TODO: testar actions
-import { AppStatusActionTypes, ChangeIsLoggedInAction, ChangeLoadingAction } from './types';
+import { AppStatusActionTypes, ChangeIsLoggedInAction, ChangeLoadingAction, ChangeLoadingMessageAction } from './types';
 
 export const changeIsLoggedInAction = (payload: boolean): ChangeIsLoggedInAction => ({
   payload,
@@ -9,4 +9,9 @@ export const changeIsLoggedInAction = (payload: boolean): ChangeIsLoggedInAction
 export const changeLoadingAction = (payload: boolean): ChangeLoadingAction => ({
   payload,
   type: AppStatusActionTypes.CHANGE_LOADING
+});
+
+export const changeLoadingMessageAction = (payload: string): ChangeLoadingMessageAction => ({
+  payload,
+  type: AppStatusActionTypes.CHANGE_LOADING_MESSAGE
 });

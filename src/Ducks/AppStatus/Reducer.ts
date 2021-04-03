@@ -5,7 +5,8 @@ import { AppStatusActionTypes, AppStatusState } from './types';
 
 export const initialState: AppStatusState = {
   isLoggedIn: false,
-  loading: false
+  loading: false,
+  loadingMessage: ''
 };
 
 export const appStatusReducer: Reducer<AppStatusState> = (state = initialState, action): AppStatusState => {
@@ -22,6 +23,12 @@ export const appStatusReducer: Reducer<AppStatusState> = (state = initialState, 
       return {
         ...state,
         loading: payload
+      };
+
+    case AppStatusActionTypes.CHANGE_LOADING_MESSAGE:
+      return {
+        ...state,
+        loadingMessage: payload
       };
 
     default:
