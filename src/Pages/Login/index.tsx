@@ -1,7 +1,6 @@
 import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
@@ -12,36 +11,33 @@ import { loginAction } from '../../Ducks/Login/Actions';
 // TODO: colocar Logo
 
 const Login: React.FunctionComponent = () => {
+  const [email, setEmail] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
-  const [username, setUsername] = useState<string>('');
-  const [usernameError, setUsernameError] = useState<string>('');
   const dispatch = useDispatch();
-  const history = useHistory();
   const updateState = {
+    email: (value: string) => {
+      setEmail(value);
+      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
     password: (value: string) => {
       setPassword(value);
       setPasswordError(value.length > 0 ? '' : 'Campo obrigatório');
-    },
-    username: (value: string) => {
-      setUsername(value);
-      setUsernameError(value.length > 0 ? '' : 'Campo obrigatório');
     }
   };
 
-  const changeValue = (type: 'username' | 'password', value: string) => {
+  const changeValue = (type: 'email' | 'password', value: string) => {
     updateState[type](value);
   };
 
   const signIn = () => {
     dispatch(
       loginAction({
-        password,
-        username
+        email,
+        password
       })
     );
-    // TODO: remover
-    history.push('/dashboard');
   };
 
   return (
@@ -56,13 +52,13 @@ const Login: React.FunctionComponent = () => {
         <Divider />
         <Information
           changeValue={changeValue}
+          email={email}
+          emailError={emailError}
           password={password}
           passwordError={passwordError}
-          username={username}
-          usernameError={usernameError}
         />
         <Footer
-          buttonDisabled={!password || !username}
+          buttonDisabled={!password || !email}
           onClick={signIn}
           primaryButtonText={'Entrar'}
           route={'/sign-up'}
