@@ -48,7 +48,7 @@ export function* login(action: LoginAction) {
     }
   } catch (error: any) {
     yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction(error.message));
+    yield put(changeLoadingMessageAction('Erro ao fazer o login'));
     yield put(changeRequestErrorAction(true));
   }
 }
