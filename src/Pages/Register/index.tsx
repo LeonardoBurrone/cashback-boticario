@@ -1,5 +1,4 @@
 import { Divider } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 
 import Information from './Information';
@@ -14,7 +13,24 @@ const Register: React.FunctionComponent = () => {
   const [dateError, setDateError] = useState<string>('');
   const [price, setPrice] = useState<string>('');
   const [priceError, setPriceError] = useState<string>('');
-  const theme = useTheme();
+  const updateState = {
+    code: (value: string) => {
+      setCode(value);
+      setCodeError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
+    date: (value: string) => {
+      setDate(value);
+      setDateError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
+    price: (value: string) => {
+      setPrice(value);
+      setPriceError(value.length > 0 ? '' : 'Campo obrigatório');
+    }
+  };
+
+  const changeValue = (type: 'code' | 'date' | 'price', value: string) => {
+    updateState[type](value);
+  };
 
   const registerPurchase = () => {
     // TODO
@@ -25,13 +41,15 @@ const Register: React.FunctionComponent = () => {
       <CBContent elevation={3}>
         <p>Logo</p>
         <Divider />
-        {/* <Information
+        <Information
           changeValue={changeValue}
-          password={password}
-          passwordError={passwordError}
-          username={username}
-          usernameError={usernameError}
-        /> */}
+          code={code}
+          codeError={codeError}
+          date={date}
+          dateError={dateError}
+          price={price}
+          priceError={priceError}
+        />
         <Footer buttonDisabled={!code || !date || !price} onClick={registerPurchase} primaryButtonText={'Registrar'} />
       </CBContent>
     </CBContainer>

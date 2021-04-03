@@ -1,22 +1,35 @@
+import DateFnsUtils from '@date-io/date-fns';
 import { Grid } from '@material-ui/core';
-import React, { useState } from 'react';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
+import React from 'react';
 
-import ToggleVisibility from '../../../Components/ToggleVisibility';
+import { CBKeyboardDatePicker } from './styles';
+
 import { CBTextField } from '../../../Styles/Common';
 
 type Props = {
-  changeValue: (type: 'username' | 'password', value: string) => void;
-  password: string;
-  passwordError: string;
-  username: string;
-  usernameError: string;
+  changeValue: (type: 'code' | 'date' | 'price', value: string) => void;
+  code: string;
+  codeError: string;
+  date: string;
+  dateError: string;
+  price: string;
+  priceError: string;
 };
 
 const Information: React.FunctionComponent<Props> = (props: Props) => {
-  const [showPassword, setShowPassword] = useState<boolean>(true);
+  const [selectedDate, setSelectedDate] = React.useState<MaterialUiPickersDate>(null);
 
-  const changeValue = (type: 'username' | 'password') => (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeValue = (type: 'code' | 'price') => (event: React.ChangeEvent<HTMLInputElement>) => {
     props.changeValue(type, event.target.value);
+  };
+
+  const handleDateChange = (date: MaterialUiPickersDate) => {
+    if (date) {
+      props.changeValue('date', date.toISOString());
+      setSelectedDate(date);
+    }
   };
 
   return (
@@ -24,28 +37,42 @@ const Information: React.FunctionComponent<Props> = (props: Props) => {
       <Grid item xs={12}>
         <CBTextField
           autoFocus
-          value={props.username}
-          onChange={changeValue('username')}
-          label="Usuário"
-          id="username"
+          value={props.code}
+          onChange={changeValue('code')}
+          label="Código"
+          id="code"
           margin="normal"
-          helperText={props.usernameError || 'Insira o usuário'}
-          error={props.usernameError.length > 0}
+          helperText={props.codeError || 'Insira o código da compra'}
+          error={props.codeError.length > 0}
         />
       </Grid>
       <Grid item xs={12}>
         <CBTextField
-          label="Senha"
-          id="password"
-          onChange={changeValue('password')}
+          label="Valor"
+          id="price"
+          onChange={changeValue('price')}
           margin="normal"
-          type={showPassword ? 'password' : 'text'}
-          helperText={props.passwordError || 'Insira a senha'}
-          error={props.passwordError.length > 0}
-          InputProps={{
-            endAdornment: <ToggleVisibility show={showPassword} toggle={() => setShowPassword(!showPassword)} />
-          }}
+          type={'text'}
+          helperText={props.priceError || 'Insira o valor da compra'}
+          error={props.priceError.length > 0}
         />
+      </Grid>
+      <Grid item xs={12}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <CBKeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="MM/dd/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            label="Selecione a data da compra"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date'
+            }}
+          />
+        </MuiPickersUtilsProvider>
       </Grid>
     </Grid>
   );
