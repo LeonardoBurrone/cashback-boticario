@@ -14,8 +14,6 @@ import darkTheme from './Styles/Themes/dark';
 import lightTheme from './Styles/Themes/light';
 import { GlobalStyle, RootDiv } from './styles';
 
-// TODO: mudar chave de Login no AppBar
-
 const AppContent: React.FunctionComponent = () => {
   const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
   const [isSideMenuOpened, setIsSideMenuOpened] = React.useState<boolean>(true);
@@ -36,11 +34,13 @@ const AppContent: React.FunctionComponent = () => {
             <AppBar
               isDarkMode={isDarkMode}
               isLoggedIn={isLoggedIn}
-              isSideMenuOpened={isSideMenuOpened}
+              isSideMenuOpened={!isLoggedIn ? false : isSideMenuOpened}
               onOpenDrawer={() => setIsSideMenuOpened(true)}
               toggleTheme={() => setIsDarkMode(!isDarkMode)}
             />
-            <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
+            {isLoggedIn && (
+              <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
+            )}
             <Toolbar />
             <Routes isLoggedIn={isLoggedIn} />
           </Router>
