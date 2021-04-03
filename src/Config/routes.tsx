@@ -6,6 +6,8 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import SignUp from '../Pages/SignUp';
 
+// TODO: remover esse arquivo não usado? As props não estão sendo atualizadas
+
 type Props = {
   isLoggedIn: boolean;
 };
