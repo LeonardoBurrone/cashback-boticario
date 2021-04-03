@@ -2,22 +2,22 @@ import { Toolbar } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
-import { Router, Switch } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
-import RouteWithSubRoutes from './Components/RouteWithSubRoutes';
+import SideMenu from './Components/SideMenu';
 
-import routesConfig from './Config/routes';
+import Routes from './Config/routes';
 import history from './Services/BrowserHistory';
 import darkTheme from './Styles/Themes/dark';
 import lightTheme from './Styles/Themes/light';
 import { GlobalStyle, RootDiv } from './styles';
 
-// TODO: tipar o any
 // TODO: mudar chave de Login no AppBar
 
 const AppContent: React.FunctionComponent = () => {
   const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
+  const [isSideMenuOpened, setIsSideMenuOpened] = React.useState<boolean>(true);
   const [themeProperties, setThemeProperties] = React.useState<Theme>({ ...lightTheme });
 
   React.useEffect(() => {
@@ -29,15 +29,18 @@ const AppContent: React.FunctionComponent = () => {
       <React.Fragment>
         <GlobalStyle />
         <CssBaseline />
-        <AppBar isDarkMode={isDarkMode} isLoggedIn={true} toggleTheme={() => setIsDarkMode(!isDarkMode)} />
-        <Toolbar />
         <RootDiv>
           <Router history={history}>
-            <Switch>
-              {routesConfig.map((route: any, index: number) => {
-                return <RouteWithSubRoutes key={index} {...route} />;
-              })}
-            </Switch>
+            <AppBar
+              isDarkMode={isDarkMode}
+              isLoggedIn={true}
+              isSideMenuOpened={isSideMenuOpened}
+              onOpenDrawer={() => setIsSideMenuOpened(true)}
+              toggleTheme={() => setIsDarkMode(!isDarkMode)}
+            />
+            <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
+            <Toolbar />
+            <Routes />
           </Router>
         </RootDiv>
       </React.Fragment>

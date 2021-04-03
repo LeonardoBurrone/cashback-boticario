@@ -1,23 +1,28 @@
-import { AppBar as MaterialAppBar, Button, IconButton, Toolbar } from '@material-ui/core';
+import { Button, IconButton, Toolbar } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import ToggleOffOutlined from '@material-ui/icons/ToggleOffOutlined';
 import ToggleOn from '@material-ui/icons/ToggleOn';
 import React from 'react';
 
-import { CBButtonDiv } from './styles';
+import { CBAppBar, CBButtonDiv } from './styles';
 
 type Props = {
   isDarkMode: boolean;
   isLoggedIn: boolean;
+  isSideMenuOpened: boolean;
+  onOpenDrawer: () => void;
   toggleTheme: () => void;
 };
 
 const AppBar: React.FunctionComponent<Props> = (props: Props) => {
+  const theme = useTheme();
+
   return (
-    <MaterialAppBar position="fixed">
+    <CBAppBar className={props.isSideMenuOpened ? 'appBarShift' : ''} position="fixed" theme={theme}>
       <Toolbar>
-        {props.isLoggedIn && (
-          <IconButton edge="start" color="inherit" aria-label="menu">
+        {props.isLoggedIn && !props.isSideMenuOpened && (
+          <IconButton aria-label="menu" color="inherit" edge="start" onClick={props.onOpenDrawer}>
             <MenuIcon />
           </IconButton>
         )}
@@ -30,7 +35,7 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
           </IconButton>
         </CBButtonDiv>
       </Toolbar>
-    </MaterialAppBar>
+    </CBAppBar>
   );
 };
 
