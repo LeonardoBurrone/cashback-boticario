@@ -1,7 +1,11 @@
-import { all, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 
 import { changePuchasesAction, fetchPurchasesErrorAction } from './Actions';
-import { FetchPuschasesAction, DashboardActionTypes, Purchase } from './types';
+import { FetchPuschasesAction, DashboardActionTypes, Purchase, PurchasesResponse } from './types';
+
+import { changeLoadingAction, changeLoadingMessageAction, changeRequestErrorAction } from '../AppStatus/Actions';
+
+import Api from '../../Services/Api';
 
 const purchases: Purchase[] = [
   {
@@ -104,11 +108,42 @@ const purchases: Purchase[] = [
 
 export function* fetchPurchases(action: FetchPuschasesAction) {
   try {
-    yield put(changePuchasesAction(purchases));
+    yield put(changeLoadingAction(true));
+    yield put(changeLoadingMessageAction('Buscando compras...'));
+
+    const result: PurchasesResponse = yield call(() => Api.get('/purchases'));
+
+    yield put(changePuchasesAction(result.purchases));
+
+    yield put(fetchPurchasesErrorAction(false));
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction(''));
+    yield put(changeRequestErrorAction(false));
   } catch (error) {
-    // TODO
     yield put(fetchPurchasesErrorAction(true));
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction('Erro ao buscar compras'));
+    yield put(changeRequestErrorAction(true));
   }
 }
 
-export const dashboardSagas = all([takeLatest(DashboardActionTypes.FETCH_PURCHASES, fetchPurchases)]);
+export function* mockedFetchPurchases(action: FetchPuschasesAction) {
+  try {
+    yield put(changeLoadingAction(true));
+    yield put(changeLoadingMessageAction('Buscando compras...'));
+
+    yield put(changePuchasesAction(purchases));
+
+    yield put(fetchPurchasesErrorAction(false));
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction(''));
+    yield put(changeRequestErrorAction(false));
+  } catch (error) {
+    yield put(fetchPurchasesErrorAction(true));
+    yield put(changeLoadingAction(false));
+    yield put(changeLoadingMessageAction('Erro ao buscar compras'));
+    yield put(changeRequestErrorAction(true));
+  }
+}
+
+export const dashboardSagas = all([takeLatest(DashboardActionTypes.FETCH_PURCHASES, mockedFetchPurchases)]);

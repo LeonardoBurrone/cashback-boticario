@@ -31,3 +31,7 @@ export type FetchPuschasesErrorAction = {
   payload: boolean;
   type: typeof DashboardActionTypes.FETCH_PURCHASES_ERROR;
 };
+
+export type PurchasesResponse = {
+  purchases: Purchase[];
+};

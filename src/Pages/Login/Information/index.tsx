@@ -5,17 +5,17 @@ import ToggleVisibility from '../../../Components/ToggleVisibility';
 import { CBTextField } from '../../../Styles/Common';
 
 type Props = {
-  changeValue: (type: 'username' | 'password', value: string) => void;
+  changeValue: (type: 'email' | 'password', value: string) => void;
+  email: string;
+  emailError: string;
   password: string;
   passwordError: string;
-  username: string;
-  usernameError: string;
 };
 
 const Information: React.FunctionComponent<Props> = (props: Props) => {
   const [showPassword, setShowPassword] = useState<boolean>(true);
 
-  const changeValue = (type: 'username' | 'password') => (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeValue = (type: 'email' | 'password') => (event: React.ChangeEvent<HTMLInputElement>) => {
     props.changeValue(type, event.target.value);
   };
 
@@ -24,13 +24,13 @@ const Information: React.FunctionComponent<Props> = (props: Props) => {
       <Grid item xs={12}>
         <CBTextField
           autoFocus
-          value={props.username}
-          onChange={changeValue('username')}
-          label="Usuário"
-          id="username"
+          value={props.email}
+          onChange={changeValue('email')}
+          label="E-mail"
+          id="email"
           margin="normal"
-          helperText={props.usernameError || 'Insira o usuário'}
-          error={props.usernameError.length > 0}
+          helperText={props.emailError || 'Insira seu e-mail'}
+          error={props.emailError.length > 0}
         />
       </Grid>
       <Grid item xs={12}>

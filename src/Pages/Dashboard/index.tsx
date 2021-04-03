@@ -24,9 +24,9 @@ const Dashboard: React.FunctionComponent = () => {
       if (purchases.length > 0) {
         return (
           <React.Fragment>
-            {purchases.map((purchase: Purchase) => {
+            {purchases.map((purchase: Purchase, index: number) => {
               return (
-                <Grid key={`${purchase.id}`} item>
+                <Grid key={`${purchase.id}${index}`} item>
                   <Paper>item {`${purchase.id}`}</Paper>
                 </Grid>
               );

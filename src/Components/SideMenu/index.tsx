@@ -31,8 +31,8 @@ const SideMenu: React.FunctionComponent<Props> = (props: Props) => {
       </OpenButtonDiv>
       <Divider />
       <List>
-        {menuOptions.map((option: MenuOption) => (
-          <Option isSideMenuOpened={props.isSideMenuOpened} key={option.title} option={option} />
+        {menuOptions.map((option: MenuOption, index: number) => (
+          <Option isSideMenuOpened={props.isSideMenuOpened} key={`${option.title}${index}`} option={option} />
         ))}
       </List>
     </CBDrawer>
