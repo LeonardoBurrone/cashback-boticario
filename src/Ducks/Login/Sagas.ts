@@ -9,7 +9,6 @@ import {
   changeLoadingMessageAction,
   changeRequestErrorAction
 } from '../AppStatus/Actions';
-
 import CentralNavigationService from '../../Services/Navigation';
 import Api from '../../Services/Api';
 
