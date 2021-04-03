@@ -1,9 +1,10 @@
 import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
 
-import Footer from './Footer';
 import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
+
+import Footer from '../../Components/Footer';
 
 // TODO: colocar Logo
 
@@ -64,7 +65,14 @@ const SignUp: React.FunctionComponent = () => {
           username={username}
           usernameError={usernameError}
         />
-        <Footer document={document} email={email} password={password} signUp={signUp} username={username} />
+        <Footer
+          buttonDisabled={!document || !email || !password || !username}
+          onClick={signUp}
+          primaryButtonText={'Cadastrar'}
+          route={'/'}
+          secondaryButton={true}
+          secondaryButtonText={'Voltar'}
+        />
       </CBContent>
     </CBContainer>
   );
