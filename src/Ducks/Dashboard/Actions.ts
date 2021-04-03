@@ -1,11 +1,22 @@
 // TODO: testar actions
-import { ChangePuchasesAction, FetchPuschasedItemsAction, DashboardActionTypes, Purchase } from './types';
+import {
+  ChangePuchasesAction,
+  DashboardActionTypes,
+  FetchPuschasesAction,
+  FetchPuschasesErrorAction,
+  Purchase
+} from './types';
 
 export const changePuchasesAction = (payload: Purchase[]): ChangePuchasesAction => ({
   payload,
   type: DashboardActionTypes.CHANGE_PURCHASES
 });
 
-export const fetchPurchasedItemsAction = (): FetchPuschasedItemsAction => ({
-  type: DashboardActionTypes.FETCH_PURCHASED_ITEMS
+export const fetchPurchasesAction = (): FetchPuschasesAction => ({
+  type: DashboardActionTypes.FETCH_PURCHASES
+});
+
+export const fetchPurchasesErrorAction = (payload: boolean): FetchPuschasesErrorAction => ({
+  payload,
+  type: DashboardActionTypes.FETCH_PURCHASES_ERROR
 });

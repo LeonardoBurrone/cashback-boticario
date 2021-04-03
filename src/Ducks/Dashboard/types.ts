@@ -1,6 +1,7 @@
 export enum DashboardActionTypes {
   CHANGE_PURCHASES = 'CHANGE_PURCHASES',
-  FETCH_PURCHASED_ITEMS = 'FETCH_PURCHASED_ITEMS'
+  FETCH_PURCHASES = 'FETCH_PURCHASES',
+  FETCH_PURCHASES_ERROR = 'FETCH_PURCHASES_ERROR'
 }
 
 export type Purchase = {
@@ -13,6 +14,7 @@ export type Purchase = {
 };
 
 export type DashboardState = {
+  fetchPurchasesError: boolean;
   purchases: Purchase[];
 };
 
@@ -21,6 +23,11 @@ export type ChangePuchasesAction = {
   type: typeof DashboardActionTypes.CHANGE_PURCHASES;
 };
 
-export type FetchPuschasedItemsAction = {
-  type: typeof DashboardActionTypes.FETCH_PURCHASED_ITEMS;
+export type FetchPuschasesAction = {
+  type: typeof DashboardActionTypes.FETCH_PURCHASES;
+};
+
+export type FetchPuschasesErrorAction = {
+  payload: boolean;
+  type: typeof DashboardActionTypes.FETCH_PURCHASES_ERROR;
 };
