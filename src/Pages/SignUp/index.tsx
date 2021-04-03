@@ -1,10 +1,12 @@
 import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Information from './Information';
 import { CBContainer, CBContent, Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
+import { signUpAction } from '../../Ducks/SignUp/Actions';
 
 // TODO: colocar Logo
 
@@ -13,10 +15,11 @@ const SignUp: React.FunctionComponent = () => {
   const [documentError, setDocumentError] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [emailError, setEmailError] = useState<string>('');
-  const [username, setUsername] = useState<string>('');
-  const [usernameError, setUsernameError] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [nameError, setNameError] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
+  const dispatch = useDispatch();
   const updateState = {
     document: (value: string) => {
       setDocument(value);
@@ -26,22 +29,29 @@ const SignUp: React.FunctionComponent = () => {
       setEmail(value);
       setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
     },
+    name: (value: string) => {
+      setName(value);
+      setNameError(value.length > 0 ? '' : 'Campo obrigatório');
+    },
     password: (value: string) => {
       setPassword(value);
       setPasswordError(value.length > 0 ? '' : 'Campo obrigatório');
-    },
-    username: (value: string) => {
-      setUsername(value);
-      setUsernameError(value.length > 0 ? '' : 'Campo obrigatório');
     }
   };
 
-  const changeValue = (type: 'document' | 'email' | 'username' | 'password', value: string) => {
+  const changeValue = (type: 'document' | 'email' | 'name' | 'password', value: string) => {
     updateState[type](value);
   };
 
   const signUp = () => {
-    // TODO: fazer
+    dispatch(
+      signUpAction({
+        document,
+        email,
+        name,
+        password
+      })
+    );
   };
 
   return (
@@ -60,13 +70,13 @@ const SignUp: React.FunctionComponent = () => {
           documentError={documentError}
           email={email}
           emailError={emailError}
+          name={name}
+          nameError={nameError}
           password={password}
           passwordError={passwordError}
-          username={username}
-          usernameError={usernameError}
         />
         <Footer
-          buttonDisabled={!document || !email || !password || !username}
+          buttonDisabled={!document || !email || !name || !password}
           onClick={signUp}
           primaryButtonText={'Cadastrar'}
           route={'/'}
