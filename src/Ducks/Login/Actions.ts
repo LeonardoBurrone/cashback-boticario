@@ -1,5 +1,9 @@
 // TODO: testar actions
-import { LoginAction, LoginActionTypes } from './types';
+import { AuthenticateAction, LoginAction, LoginActionTypes } from './types';
+
+export const authenticateAction = (): AuthenticateAction => ({
+  type: LoginActionTypes.AUTHENTICATE
+});
 
 export const loginAction = (payload: { email: string; password: string }): LoginAction => ({
   payload,

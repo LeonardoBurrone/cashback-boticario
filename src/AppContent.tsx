@@ -2,6 +2,7 @@ import { Toolbar } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Router } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
@@ -19,6 +20,7 @@ const AppContent: React.FunctionComponent = () => {
   const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
   const [isSideMenuOpened, setIsSideMenuOpened] = React.useState<boolean>(true);
   const [themeProperties, setThemeProperties] = React.useState<Theme>({ ...lightTheme });
+  const isLoggedIn = useSelector((state: reducers.rootReducer) => state.appStatus.isLoggedIn);
 
   React.useEffect(() => {
     setThemeProperties(isDarkMode ? { ...darkTheme } : { ...lightTheme });
@@ -33,14 +35,14 @@ const AppContent: React.FunctionComponent = () => {
           <Router history={history}>
             <AppBar
               isDarkMode={isDarkMode}
-              isLoggedIn={true}
+              isLoggedIn={isLoggedIn}
               isSideMenuOpened={isSideMenuOpened}
               onOpenDrawer={() => setIsSideMenuOpened(true)}
               toggleTheme={() => setIsDarkMode(!isDarkMode)}
             />
             <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
             <Toolbar />
-            <Routes />
+            <Routes isLoggedIn={isLoggedIn} />
           </Router>
         </RootDiv>
       </React.Fragment>
