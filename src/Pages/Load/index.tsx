@@ -1,5 +1,4 @@
-import { CircularProgress, IconButton, Typography } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+import { Button, CircularProgress, Typography } from '@material-ui/core';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -19,17 +18,17 @@ const Load: React.FunctionComponent = () => {
 
   return (
     <CBDialog aria-labelledby="customized-dialog-title" open={loading || requestFailed}>
-      {requestFailed && (
-        <ButtonDiv>
-          <IconButton aria-label="close" onClick={closeDialog}>
-            <CloseIcon />
-          </IconButton>
-        </ButtonDiv>
-      )}
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h6" gutterBottom>
         {loadingMessage}
       </Typography>
       {!requestFailed && <CircularProgress />}
+      {requestFailed && (
+        <ButtonDiv>
+          <Button color="primary" onClick={closeDialog} variant={'text'}>
+            Fechar
+          </Button>
+        </ButtonDiv>
+      )}
     </CBDialog>
   );
 };
