@@ -26,7 +26,9 @@ const Load: React.FunctionComponent = () => {
           </IconButton>
         </ButtonDiv>
       )}
-      <Typography gutterBottom>{loadingMessage}</Typography>
+      <Typography variant="h5" gutterBottom>
+        {loadingMessage}
+      </Typography>
       {!requestFailed && <CircularProgress />}
     </CBDialog>
   );

@@ -41,6 +41,10 @@ const Login: React.FunctionComponent = () => {
     );
   };
 
+  const isButtonDisabled = () => {
+    return emailError.length > 0 || passwordError.length > 0;
+  };
+
   return (
     <CBContainer maxWidth="sm">
       <CBToolbar theme={theme} />
@@ -55,7 +59,7 @@ const Login: React.FunctionComponent = () => {
           passwordError={passwordError}
         />
         <Footer
-          buttonDisabled={!email || !password}
+          buttonDisabled={isButtonDisabled()}
           onClick={signIn}
           primaryButtonText={'Entrar'}
           route={'/sign-up'}
