@@ -9,10 +9,6 @@ const GlobalStyle = createGlobalStyle`
   #root {
     min-height: 100%;
   }
-
-  body{
-    background: #FFF;
-  }
 `;
 
 const RootDiv = styled('div')`

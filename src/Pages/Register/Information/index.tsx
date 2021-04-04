@@ -52,7 +52,7 @@ const Information: React.FunctionComponent<Props> = (props: Props) => {
           id="price"
           onChange={changeValue('price')}
           margin="normal"
-          type={'text'}
+          type={'number'}
           helperText={props.priceError || 'Insira o valor da compra'}
           error={props.priceError.length > 0}
         />

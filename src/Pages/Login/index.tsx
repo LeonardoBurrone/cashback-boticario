@@ -1,14 +1,14 @@
-import { Divider } from '@material-ui/core';
+import { Divider, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Information from './Information';
-import { CBContainer, CBContent, Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
 import { loginAction } from '../../Ducks/Login/Actions';
-
-// TODO: colocar Logo
+import { validateEmail } from '../../Services/Validate';
+import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
 const Login: React.FunctionComponent = () => {
   const [email, setEmail] = useState<string>('');
@@ -16,10 +16,11 @@ const Login: React.FunctionComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
   const dispatch = useDispatch();
+  const theme = useTheme();
   const updateState = {
     email: (value: string) => {
       setEmail(value);
-      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+      setEmailError(validateEmail(value));
     },
     password: (value: string) => {
       setPassword(value);
@@ -40,15 +41,15 @@ const Login: React.FunctionComponent = () => {
     );
   };
 
+  const isButtonDisabled = () => {
+    return !email || emailError.length > 0 || !password || passwordError.length > 0;
+  };
+
   return (
     <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
       <CBContent elevation={3}>
-        <Logo>
-          <p>Logo</p>
-        </Logo>
-        <Title>
-          <p>Login</p>
-        </Title>
+        <Typography variant="h5">Login</Typography>
         <Divider />
         <Information
           changeValue={changeValue}
@@ -58,7 +59,7 @@ const Login: React.FunctionComponent = () => {
           passwordError={passwordError}
         />
         <Footer
-          buttonDisabled={!password || !email}
+          buttonDisabled={isButtonDisabled()}
           onClick={signIn}
           primaryButtonText={'Entrar'}
           route={'/sign-up'}

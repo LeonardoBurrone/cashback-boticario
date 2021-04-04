@@ -11,8 +11,7 @@ const ButtonDiv = styled('div')`
 
 const CBDialog = styled(Dialog)`
   & .MuiDialog-paperScrollPaper {
-    align-items: center;
-    padding: 30px;
+    padding: 20px;
   }
 `;
 

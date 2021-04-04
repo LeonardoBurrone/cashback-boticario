@@ -1,19 +1,11 @@
-import { Container, Paper } from '@material-ui/core';
 import styled from 'styled-components';
 
-const CBContainer = styled(Container)`
+const Information = styled('div')`
   && {
-    background: #aaa543;
+    align-items: baseline;
     display: flex;
-    flex-flow: column;
+    justify-content: space-between;
   }
 `;
 
-const CBContent = styled(Paper)`
-  && {
-    display: flex;
-    flex-flow: column;
-  }
-`;
-
-export { CBContainer, CBContent };
+export { Information };

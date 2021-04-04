@@ -1,14 +1,15 @@
-import { Divider } from '@material-ui/core';
+import { Divider, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Information from './Information';
-import { CBContainer, CBContent, Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
 import { signUpAction } from '../../Ducks/SignUp/Actions';
-
-// TODO: colocar Logo
+import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
+import { documentMask, unmask } from '../../Services/Mascara';
+import { validateDocument, validateEmail, validateName } from '../../Services/Validate';
 
 const SignUp: React.FunctionComponent = () => {
   const [document, setDocument] = useState<string>('');
@@ -20,18 +21,20 @@ const SignUp: React.FunctionComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
   const dispatch = useDispatch();
+  const theme = useTheme();
+
   const updateState = {
     document: (value: string) => {
-      setDocument(value);
-      setDocumentError(value.length > 0 ? '' : 'Campo obrigatório');
+      setDocument(documentMask(value.length < 15 ? value : document));
+      setDocumentError(validateDocument(unmask(value.length < 15 ? value : document)));
     },
     email: (value: string) => {
       setEmail(value);
-      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+      setEmailError(validateEmail(value));
     },
     name: (value: string) => {
       setName(value);
-      setNameError(value.length > 0 ? '' : 'Campo obrigatório');
+      setNameError(validateName(value));
     },
     password: (value: string) => {
       setPassword(value);
@@ -41,6 +44,19 @@ const SignUp: React.FunctionComponent = () => {
 
   const changeValue = (type: 'document' | 'email' | 'name' | 'password', value: string) => {
     updateState[type](value);
+  };
+
+  const isButtonDisabled = () => {
+    return (
+      !document ||
+      documentError.length > 0 ||
+      !email ||
+      emailError.length > 0 ||
+      !name ||
+      nameError.length > 0 ||
+      !password ||
+      passwordError.length > 0
+    );
   };
 
   const signUp = () => {
@@ -56,13 +72,9 @@ const SignUp: React.FunctionComponent = () => {
 
   return (
     <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
       <CBContent elevation={3}>
-        <Logo>
-          <p>Logo</p>
-        </Logo>
-        <Title>
-          <p>SignUp</p>
-        </Title>
+        <Typography variant="h5">Crie sua conta</Typography>
         <Divider />
         <Information
           changeValue={changeValue}
@@ -76,9 +88,9 @@ const SignUp: React.FunctionComponent = () => {
           passwordError={passwordError}
         />
         <Footer
-          buttonDisabled={!document || !email || !name || !password}
+          buttonDisabled={isButtonDisabled()}
           onClick={signUp}
-          primaryButtonText={'Cadastrar'}
+          primaryButtonText={'Criar'}
           route={'/'}
           secondaryButton={true}
           secondaryButtonText={'Voltar'}

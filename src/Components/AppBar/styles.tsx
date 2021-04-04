@@ -1,4 +1,4 @@
-import { AppBar } from '@material-ui/core';
+import { AppBar, IconButton } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
 import styled from 'styled-components';
 
@@ -30,10 +30,26 @@ const CBAppBar = styled(AppBar)`
 
 const CBButtonDiv = styled('div')`
   && {
+    align-items: center;
     display: flex;
-    flex-grow: 1;
     justify-content: flex-end;
+
+    &.appBarShift {
+      flex-grow: 1;
+    }
   }
 `;
 
-export { CBAppBar, CBButtonDiv };
+const ContrastButton = styled(IconButton)`
+  && {
+    padding: 0;
+  }
+`;
+
+const LogoImg = styled('img')`
+  && {
+    width: 100px;
+  }
+`;
+
+export { CBAppBar, CBButtonDiv, ContrastButton, LogoImg };

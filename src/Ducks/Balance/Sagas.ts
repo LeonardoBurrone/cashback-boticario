@@ -25,7 +25,7 @@ export function* fetchBalance(action: FetchBalanceAction) {
 // TODO: remover função mockada
 export function* mockedfetchBalance(action: FetchBalanceAction) {
   try {
-    yield put(changeBalanceAction('100.5'));
+    yield put(changeBalanceAction('100.50'));
     yield put(changeBalanceErrorAction(false));
   } catch (error: any) {
     yield put(changeBalanceAction(''));
