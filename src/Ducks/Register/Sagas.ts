@@ -13,8 +13,8 @@ export function* registerPurchase(action: RegisterPurchaseAction) {
     yield call(() => Api.post('/register', action.payload));
 
     yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction(''));
-    yield put(changeRequestErrorAction(false));
+    yield put(changeLoadingMessageAction('Compra cadastrada com sucesso'));
+    yield put(changeRequestErrorAction(true));
   } catch (error: any) {
     yield put(changeLoadingAction(false));
     yield put(changeLoadingMessageAction('Erro ao cadastrar compra'));
@@ -28,11 +28,9 @@ export function* mockedRegisterPurchase(action: RegisterPurchaseAction) {
     yield put(changeLoadingAction(true));
     yield put(changeLoadingMessageAction('Cadastrando compra...'));
 
-    yield call(() => Api.post('/register', action.payload));
-
     yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction(''));
-    yield put(changeRequestErrorAction(false));
+    yield put(changeLoadingMessageAction('Compra cadastrada com sucesso'));
+    yield put(changeRequestErrorAction(true));
   } catch (error: any) {
     yield put(changeLoadingAction(false));
     yield put(changeLoadingMessageAction('Erro ao cadastrar compra'));

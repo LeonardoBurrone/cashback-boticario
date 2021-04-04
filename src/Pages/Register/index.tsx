@@ -1,9 +1,11 @@
 import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Information from './Information';
 
 import Footer from '../../Components/Footer';
+import { registerPurchaseAction } from '../../Ducks/Register/Actions';
 import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
 const Register: React.FunctionComponent = () => {
@@ -13,6 +15,7 @@ const Register: React.FunctionComponent = () => {
   const [dateError, setDateError] = useState<string>('');
   const [price, setPrice] = useState<string>('');
   const [priceError, setPriceError] = useState<string>('');
+  const dispatch = useDispatch();
   const theme = useTheme();
 
   const updateState = {
@@ -34,8 +37,18 @@ const Register: React.FunctionComponent = () => {
     updateState[type](value);
   };
 
+  const isButtonDisabled = () => {
+    return !code || codeError.length > 0 || !date || dateError.length > 0 || !price || priceError.length > 0;
+  };
+
   const registerPurchase = () => {
-    // TODO
+    dispatch(
+      registerPurchaseAction({
+        code,
+        date,
+        price
+      })
+    );
   };
 
   return (
@@ -51,7 +64,7 @@ const Register: React.FunctionComponent = () => {
           price={price}
           priceError={priceError}
         />
-        <Footer buttonDisabled={!code || !date || !price} onClick={registerPurchase} primaryButtonText={'Registrar'} />
+        <Footer buttonDisabled={isButtonDisabled()} onClick={registerPurchase} primaryButtonText={'Registrar'} />
       </CBContent>
     </CBContainer>
   );
