@@ -2,11 +2,13 @@ export enum LoginActionTypes {
   AUTHENTICATE = 'AUTHENTICATE',
   AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR',
   AUTHENTICATION_SUCCESS = 'AUTHENTICATION_SUCCESS',
-  LOGIN = 'LOGIN'
+  LOGIN = 'LOGIN',
+  LOGOUT = 'LOGOUT'
 }
 
 export type LoginStackParamList = {
   dashboard: undefined;
+  login: undefined;
 };
 
 export type AuthenticateAction = {
@@ -19,6 +21,10 @@ export type LoginAction = {
     password: string;
   };
   type: typeof LoginActionTypes.LOGIN;
+};
+
+export type LogoutAction = {
+  type: typeof LoginActionTypes.LOGOUT;
 };
 
 export type RaceReturnType = [

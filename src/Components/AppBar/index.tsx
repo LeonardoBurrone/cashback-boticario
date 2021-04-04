@@ -11,6 +11,7 @@ import { CBAppBar, CBButtonDiv, ContrastButton, LogoImg } from './styles';
 import Logo from '../../Assets/logo.svg';
 
 type Props = {
+  doLogout: () => void;
   isDarkMode: boolean;
   isLoggedIn: boolean;
   isSideMenuOpened: boolean;
@@ -28,6 +29,11 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const logout = () => {
+    handleClose();
+    props.doLogout();
   };
 
   const toggleTheme = () => {
@@ -53,7 +59,9 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
           </IconButton>
         )}
         {!props.isSideMenuOpened && <LogoImg src={Logo} alt="logo" />}
-        {!props.isLoggedIn && <CBButtonDiv>{renderContrastButton()}</CBButtonDiv>}
+        {!props.isLoggedIn && (
+          <CBButtonDiv className={!props.isLoggedIn && 'appBarShift'}>{renderContrastButton()}</CBButtonDiv>
+        )}
         {props.isLoggedIn && (
           <CBButtonDiv className={props.isSideMenuOpened ? '' : 'appBarShift'}>
             <Typography variant="subtitle1">Olá Revendedor</Typography>
@@ -69,7 +77,7 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
             </IconButton>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
               <MenuItem>{renderContrastButton()}</MenuItem>
-              <MenuItem onClick={handleClose}>Sair</MenuItem>
+              <MenuItem onClick={logout}>Sair</MenuItem>
             </Menu>
           </CBButtonDiv>
         )}

@@ -52,6 +52,17 @@ export function* login(action: LoginAction) {
   }
 }
 
+export function* logout(action: AuthenticateAction) {
+  yield put(changeLoadingAction(true));
+  yield put(changeLoadingMessageAction('Fazendo logout...'));
+
+  const centralNavigationService = CentralNavigationService<LoginStackParamList>();
+  centralNavigationService.navigate('login');
+
+  yield put(changeLoadingAction(false));
+  yield put(changeLoadingMessageAction(''));
+}
+
 // TODO: remover função mockada
 export function* mockedLogin(action: LoginAction) {
   yield put(changeLoadingAction(true));
@@ -80,5 +91,6 @@ export function* mockedLogin(action: LoginAction) {
 
 export const loginSagas = all([
   takeLatest(LoginActionTypes.AUTHENTICATE, authenticate),
-  takeLatest(LoginActionTypes.LOGIN, mockedLogin)
+  takeLatest(LoginActionTypes.LOGIN, mockedLogin),
+  takeLatest(LoginActionTypes.LOGOUT, logout)
 ]);
