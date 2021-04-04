@@ -1,12 +1,12 @@
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import List from './List';
 import { CBContainer } from './styles';
 
 import { fetchPurchasesAction } from '../../Ducks/Dashboard/Actions';
-import { Purchase } from '../../Ducks/Dashboard/types';
 import { CBToolbar } from '../../Styles/Common';
 
 const Dashboard: React.FunctionComponent = () => {
@@ -22,17 +22,7 @@ const Dashboard: React.FunctionComponent = () => {
   const renderPurchases = () => {
     if (!fetchPurchasesError) {
       if (purchases.length > 0) {
-        return (
-          <React.Fragment>
-            {purchases.map((purchase: Purchase, index: number) => {
-              return (
-                <Grid key={`${purchase.id}${index}`} item>
-                  <Paper>item {`${purchase.id}`}</Paper>
-                </Grid>
-              );
-            })}
-          </React.Fragment>
-        );
+        return <List purchases={purchases} />;
       }
 
       return <div>Lista vazia</div>;
