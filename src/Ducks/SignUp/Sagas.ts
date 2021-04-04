@@ -27,23 +27,4 @@ export function* signUp(action: SignUpAction) {
   }
 }
 
-// TODO: remover função mockada
-export function* mockedSignUp(action: SignUpAction) {
-  try {
-    yield put(changeLoadingAction(true));
-    yield put(changeLoadingMessageAction('Cadastrando conta...'));
-
-    const { email, password } = action.payload;
-
-    yield put(loginAction({ email, password }));
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction(''));
-    yield put(changeRequestErrorAction(false));
-  } catch (error: any) {
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction('Erro ao cadastrar conta'));
-    yield put(changeRequestErrorAction(true));
-  }
-}
-
-export const signUpSagas = all([takeLatest(SignActionTypes.SIGN_UP, mockedSignUp)]);
+export const signUpSagas = all([takeLatest(SignActionTypes.SIGN_UP, signUp)]);
