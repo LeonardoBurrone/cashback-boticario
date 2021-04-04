@@ -1,15 +1,14 @@
-import { Divider } from '@material-ui/core';
+import { Divider, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Information from './Information';
-import { Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
 import { signUpAction } from '../../Ducks/SignUp/Actions';
-import { CBContainer, CBContent } from '../../Styles/Common';
-
-// TODO: colocar Logo
+import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
+import { validateEmail } from '../../Services/Validate';
 
 const SignUp: React.FunctionComponent = () => {
   const [document, setDocument] = useState<string>('');
@@ -21,6 +20,8 @@ const SignUp: React.FunctionComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
   const dispatch = useDispatch();
+  const theme = useTheme();
+
   const updateState = {
     document: (value: string) => {
       setDocument(value);
@@ -28,7 +29,7 @@ const SignUp: React.FunctionComponent = () => {
     },
     email: (value: string) => {
       setEmail(value);
-      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+      setEmailError(validateEmail(value));
     },
     name: (value: string) => {
       setName(value);
@@ -57,13 +58,9 @@ const SignUp: React.FunctionComponent = () => {
 
   return (
     <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
       <CBContent elevation={3}>
-        <Logo>
-          <p>Logo</p>
-        </Logo>
-        <Title>
-          <p>SignUp</p>
-        </Title>
+        <Typography variant="h5">Crie sua conta</Typography>
         <Divider />
         <Information
           changeValue={changeValue}
@@ -79,7 +76,7 @@ const SignUp: React.FunctionComponent = () => {
         <Footer
           buttonDisabled={!document || !email || !name || !password}
           onClick={signUp}
-          primaryButtonText={'Cadastrar'}
+          primaryButtonText={'Criar'}
           route={'/'}
           secondaryButton={true}
           secondaryButtonText={'Voltar'}
