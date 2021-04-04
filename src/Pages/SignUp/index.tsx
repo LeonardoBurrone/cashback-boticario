@@ -8,7 +8,8 @@ import Information from './Information';
 import Footer from '../../Components/Footer';
 import { signUpAction } from '../../Ducks/SignUp/Actions';
 import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
-import { validateEmail } from '../../Services/Validate';
+import { documentMask, unmask } from '../../Services/Mascara';
+import { validateDocument, validateEmail, validateName } from '../../Services/Validate';
 
 const SignUp: React.FunctionComponent = () => {
   const [document, setDocument] = useState<string>('');
@@ -24,8 +25,8 @@ const SignUp: React.FunctionComponent = () => {
 
   const updateState = {
     document: (value: string) => {
-      setDocument(value);
-      setDocumentError(value.length > 0 ? '' : 'Campo obrigatório');
+      setDocument(documentMask(value.length < 15 ? value : document));
+      setDocumentError(validateDocument(unmask(value.length < 15 ? value : document)));
     },
     email: (value: string) => {
       setEmail(value);
@@ -33,7 +34,7 @@ const SignUp: React.FunctionComponent = () => {
     },
     name: (value: string) => {
       setName(value);
-      setNameError(value.length > 0 ? '' : 'Campo obrigatório');
+      setNameError(validateName(value));
     },
     password: (value: string) => {
       setPassword(value);

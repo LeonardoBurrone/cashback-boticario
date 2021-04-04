@@ -7,6 +7,7 @@ import Information from './Information';
 
 import Footer from '../../Components/Footer';
 import { loginAction } from '../../Ducks/Login/Actions';
+import { validateEmail } from '../../Services/Validate';
 import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
 const Login: React.FunctionComponent = () => {
@@ -19,7 +20,7 @@ const Login: React.FunctionComponent = () => {
   const updateState = {
     email: (value: string) => {
       setEmail(value);
-      setEmailError(value.length > 0 ? '' : 'Campo obrigatório');
+      setEmailError(validateEmail(value));
     },
     password: (value: string) => {
       setPassword(value);
