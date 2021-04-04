@@ -32,8 +32,11 @@ const CBButtonDiv = styled('div')`
   && {
     align-items: center;
     display: flex;
-    flex-grow: 1;
     justify-content: flex-end;
+
+    &.appBarShift {
+      flex-grow: 1;
+    }
   }
 `;
 

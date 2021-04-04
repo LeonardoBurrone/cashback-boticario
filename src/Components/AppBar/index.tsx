@@ -52,10 +52,10 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
             <MenuIcon />
           </IconButton>
         )}
-        <LogoImg src={Logo} alt="logo" />
+        {!props.isSideMenuOpened && <LogoImg src={Logo} alt="logo" />}
         {!props.isLoggedIn && <CBButtonDiv>{renderContrastButton()}</CBButtonDiv>}
         {props.isLoggedIn && (
-          <CBButtonDiv>
+          <CBButtonDiv className={props.isSideMenuOpened ? '' : 'appBarShift'}>
             <Typography variant="subtitle1">Olá Revendedor</Typography>
             <IconButton
               edge="end"
