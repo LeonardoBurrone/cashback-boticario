@@ -5,7 +5,9 @@ import ToggleOffOutlined from '@material-ui/icons/ToggleOffOutlined';
 import ToggleOn from '@material-ui/icons/ToggleOn';
 import React from 'react';
 
-import { CBAppBar, CBButtonDiv } from './styles';
+import { CBAppBar, CBButtonDiv, LogoImg } from './styles';
+
+import Logo from '../../Assets/logo.svg';
 
 type Props = {
   isDarkMode: boolean;
@@ -26,6 +28,7 @@ const AppBar: React.FunctionComponent<Props> = (props: Props) => {
             <MenuIcon />
           </IconButton>
         )}
+        <LogoImg src={Logo} alt="logo" />
         <CBButtonDiv>
           <IconButton color="default">
             {props.isDarkMode ? <ToggleOn /> : <ToggleOffOutlined />}

@@ -55,7 +55,7 @@ const Login: React.FunctionComponent = () => {
           passwordError={passwordError}
         />
         <Footer
-          buttonDisabled={!password || !email}
+          buttonDisabled={!email || !password}
           onClick={signIn}
           primaryButtonText={'Entrar'}
           route={'/sign-up'}

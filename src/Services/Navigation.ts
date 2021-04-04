@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import history from './BrowserHistory';
+import { history } from './BrowserHistory';
 
 declare type ParamListBase = Record<string, object | undefined>;
 

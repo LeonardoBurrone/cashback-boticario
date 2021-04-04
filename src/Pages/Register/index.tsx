@@ -1,10 +1,10 @@
-import { Divider } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 
 import Information from './Information';
 
 import Footer from '../../Components/Footer';
-import { CBContainer, CBContent } from '../../Styles/Common';
+import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
 const Register: React.FunctionComponent = () => {
   const [code, setCode] = useState<string>('');
@@ -13,6 +13,8 @@ const Register: React.FunctionComponent = () => {
   const [dateError, setDateError] = useState<string>('');
   const [price, setPrice] = useState<string>('');
   const [priceError, setPriceError] = useState<string>('');
+  const theme = useTheme();
+
   const updateState = {
     code: (value: string) => {
       setCode(value);
@@ -38,9 +40,8 @@ const Register: React.FunctionComponent = () => {
 
   return (
     <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
       <CBContent elevation={3}>
-        <p>Logo</p>
-        <Divider />
         <Information
           changeValue={changeValue}
           code={code}

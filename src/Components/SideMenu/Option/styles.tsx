@@ -1,17 +1,20 @@
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { ListItem, ListItemIcon, Typography } from '@material-ui/core';
+import { Theme } from '@material-ui/core/styles';
 import styled from 'styled-components';
+
+type Props = {
+  theme: Theme;
+};
 
 const OptionWrapper = styled(ListItem)`
   && {
     max-width: 200px;
-    height: 70px;
-    padding: 2px 10px 2px 0px;
+    padding: 10px;
     position: relative;
   }
 
   &.is-active {
+    background-color: ${(props: Props) => props.theme.palette.secondary.main};
     max-width: 210px;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -20,23 +23,32 @@ const OptionWrapper = styled(ListItem)`
 
 const OptionIcon = styled(ListItemIcon)`
   && {
+    color: ${(props: Props) => props.theme.palette.primary.contrastText};
     opacity: 0.7;
     min-width: 20px;
+    margin: 10px 10px 10px 0px;
+
+    &.is-active {
+      color: ${(props: Props) => props.theme.palette.secondary.contrastText};
+    }
   }
 `;
 
-const OptionText = styled(ListItemText)`
+const TextDiv = styled('div')`
   && {
-    min-width: 130px;
-    white-space: normal;
-    & .text-primary {
-      font-size: 14px;
-    }
-    & .text-secondary {
-      opacity: 0.7;
-      font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+const OptionText = styled(Typography)`
+  && {
+    color: ${(props: Props) => props.theme.palette.primary.contrastText};
+
+    &.is-active {
+      color: ${(props: Props) => props.theme.palette.secondary.contrastText};
     }
   }
 `;
 
-export { OptionIcon, OptionText, OptionWrapper };
+export { OptionIcon, OptionWrapper, OptionText, TextDiv };

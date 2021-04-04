@@ -36,4 +36,10 @@ const CBButtonDiv = styled('div')`
   }
 `;
 
-export { CBAppBar, CBButtonDiv };
+const LogoImg = styled('img')`
+  && {
+    width: 100px;
+  }
+`;
+
+export { CBAppBar, CBButtonDiv, LogoImg };

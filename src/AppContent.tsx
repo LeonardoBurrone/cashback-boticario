@@ -1,4 +1,3 @@
-import { Toolbar } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
@@ -12,7 +11,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import SignUp from './Pages/SignUp';
 import Dashboard from './Pages/Dashboard';
-import history from './Services/BrowserHistory';
+import { history } from './Services/BrowserHistory';
 import { GlobalStyle, RootDiv } from './styles';
 import darkTheme from './Styles/Themes/dark';
 import lightTheme from './Styles/Themes/light';
@@ -45,7 +44,6 @@ const AppContent: React.FunctionComponent = () => {
             {isLoggedIn && (
               <SideMenu onCloseDrawer={() => setIsSideMenuOpened(false)} isSideMenuOpened={isSideMenuOpened} />
             )}
-            <Toolbar />
             <Switch>
               <Route path="/" exact component={Login} />
               <Route path="/sign-up" component={SignUp} />
