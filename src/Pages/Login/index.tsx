@@ -1,15 +1,13 @@
-import { Divider } from '@material-ui/core';
+import { Divider, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Information from './Information';
-import { Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
 import { loginAction } from '../../Ducks/Login/Actions';
-import { CBContainer, CBContent } from '../../Styles/Common';
-
-// TODO: colocar Logo
+import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
 const Login: React.FunctionComponent = () => {
   const [email, setEmail] = useState<string>('');
@@ -17,6 +15,7 @@ const Login: React.FunctionComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
   const dispatch = useDispatch();
+  const theme = useTheme();
   const updateState = {
     email: (value: string) => {
       setEmail(value);
@@ -43,13 +42,9 @@ const Login: React.FunctionComponent = () => {
 
   return (
     <CBContainer maxWidth="sm">
+      <CBToolbar theme={theme} />
       <CBContent elevation={3}>
-        <Logo>
-          <p>Logo</p>
-        </Logo>
-        <Title>
-          <p>Login</p>
-        </Title>
+        <Typography variant="h5">Login</Typography>
         <Divider />
         <Information
           changeValue={changeValue}
