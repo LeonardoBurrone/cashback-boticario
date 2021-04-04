@@ -2,7 +2,7 @@ import { Grid, Divider, Typography } from '@material-ui/core';
 import moment from 'moment';
 import React from 'react';
 
-import { Information } from './styles';
+import { Information } from '../styles';
 
 import { Purchase } from '../../../Ducks/Dashboard/types';
 import { CBContent } from '../../../Styles/Common';
