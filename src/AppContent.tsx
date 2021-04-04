@@ -1,11 +1,12 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Theme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 import AppBar from './Components/AppBar';
 import SideMenu from './Components/SideMenu';
+import { logoutAction } from './Ducks/Login/Actions';
 import Load from './Pages/Load';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -21,10 +22,15 @@ const AppContent: React.FunctionComponent = () => {
   const [isSideMenuOpened, setIsSideMenuOpened] = React.useState<boolean>(false);
   const [themeProperties, setThemeProperties] = React.useState<Theme>({ ...lightTheme });
   const isLoggedIn = useSelector((state: reducers.rootReducer) => state.appStatus.isLoggedIn);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     setThemeProperties(isDarkMode ? { ...darkTheme } : { ...lightTheme });
   }, [isDarkMode]);
+
+  const doLogout = () => {
+    dispatch(logoutAction());
+  };
 
   return (
     <ThemeProvider theme={themeProperties}>
@@ -35,6 +41,7 @@ const AppContent: React.FunctionComponent = () => {
           <Load />
           <Router history={history}>
             <AppBar
+              doLogout={doLogout}
               isDarkMode={isDarkMode}
               isLoggedIn={isLoggedIn}
               isSideMenuOpened={!isLoggedIn ? false : isSideMenuOpened}
@@ -49,6 +56,7 @@ const AppContent: React.FunctionComponent = () => {
               <Route path="/sign-up" component={SignUp} />
               <Route path="/dashboard" component={() => (isLoggedIn ? <Dashboard /> : <Redirect to="/" />)} />
               <Route path="/register" component={() => (isLoggedIn ? <Register /> : <Redirect to="/" />)} />
+              <Redirect to="/" />
             </Switch>
           </Router>
         </RootDiv>
