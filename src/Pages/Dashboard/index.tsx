@@ -4,10 +4,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import List from './List';
-import { CBContainer } from './styles';
 
 import { fetchPurchasesAction } from '../../Ducks/Dashboard/Actions';
-import { CBToolbar } from '../../Styles/Common';
+import { CBContainer, CBToolbar } from '../../Styles/Common';
 
 const Dashboard: React.FunctionComponent = () => {
   const fetchPurchasesError = useSelector((state: reducers.rootReducer) => state.dashboard.fetchPurchasesError);

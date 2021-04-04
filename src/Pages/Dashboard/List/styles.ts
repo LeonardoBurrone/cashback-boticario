@@ -1,13 +1,4 @@
-import { Container } from '@material-ui/core';
 import styled from 'styled-components';
-
-const CBContainer = styled(Container)`
-  && {
-    background: #aaa543;
-    display: flex;
-    flex-flow: column;
-  }
-`;
 
 const Information = styled('div')`
   && {
@@ -17,4 +8,4 @@ const Information = styled('div')`
   }
 `;
 
-export { CBContainer, Information };
+export { Information };

@@ -1,5 +1,12 @@
-import { Paper, TextField } from '@material-ui/core';
+import { Container, Paper, TextField } from '@material-ui/core';
 import styled from 'styled-components';
+
+const CBContainer = styled(Container)`
+  && {
+    display: flex;
+    flex-flow: column;
+  }
+`;
 
 const CBContent = styled(Paper)`
   && {
@@ -23,4 +30,4 @@ const CBToolbar = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar
 }));
 
-export { CBContent, CBTextField, CBToolbar };
+export { CBContainer, CBContent, CBTextField, CBToolbar };

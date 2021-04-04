@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Information from './Information';
-import { CBContainer, Logo, Title } from './styles';
+import { Logo, Title } from './styles';
 
 import Footer from '../../Components/Footer';
 import { loginAction } from '../../Ducks/Login/Actions';
-import { CBContent } from '../../Styles/Common';
+import { CBContainer, CBContent } from '../../Styles/Common';
 
 // TODO: colocar Logo
 

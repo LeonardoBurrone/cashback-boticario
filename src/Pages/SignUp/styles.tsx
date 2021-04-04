@@ -1,13 +1,4 @@
-import { Container } from '@material-ui/core';
 import styled from 'styled-components';
-
-const CBContainer = styled(Container)`
-  && {
-    background: #aaa543;
-    display: flex;
-    flex-flow: column;
-  }
-`;
 
 const Logo = styled('div')`
   && {
@@ -25,4 +16,4 @@ const Title = styled('p')`
   }
 `;
 
-export { CBContainer, Logo, Title };
+export { Logo, Title };
