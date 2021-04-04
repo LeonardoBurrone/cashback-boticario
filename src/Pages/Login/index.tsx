@@ -42,7 +42,7 @@ const Login: React.FunctionComponent = () => {
   };
 
   const isButtonDisabled = () => {
-    return emailError.length > 0 || passwordError.length > 0;
+    return !email || emailError.length > 0 || !password || passwordError.length > 0;
   };
 
   return (

@@ -46,6 +46,19 @@ const SignUp: React.FunctionComponent = () => {
     updateState[type](value);
   };
 
+  const isButtonDisabled = () => {
+    return (
+      !document ||
+      documentError.length > 0 ||
+      !email ||
+      emailError.length > 0 ||
+      !name ||
+      nameError.length > 0 ||
+      !password ||
+      passwordError.length > 0
+    );
+  };
+
   const signUp = () => {
     dispatch(
       signUpAction({
@@ -75,7 +88,7 @@ const SignUp: React.FunctionComponent = () => {
           passwordError={passwordError}
         />
         <Footer
-          buttonDisabled={!document || !email || !name || !password}
+          buttonDisabled={isButtonDisabled()}
           onClick={signUp}
           primaryButtonText={'Criar'}
           route={'/'}

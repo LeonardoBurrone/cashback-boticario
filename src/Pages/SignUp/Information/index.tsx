@@ -41,7 +41,6 @@ const Information: React.FunctionComponent<Props> = (props: Props) => {
       </Grid>
       <Grid item xs={12}>
         <CBTextField
-          autoFocus
           value={props.document}
           onChange={changeValue('document')}
           label="CPF"
@@ -53,7 +52,6 @@ const Information: React.FunctionComponent<Props> = (props: Props) => {
       </Grid>
       <Grid item xs={12}>
         <CBTextField
-          autoFocus
           value={props.email}
           onChange={changeValue('email')}
           label="E-mail"
