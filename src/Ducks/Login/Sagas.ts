@@ -63,34 +63,8 @@ export function* logout(action: AuthenticateAction) {
   yield put(changeLoadingMessageAction(''));
 }
 
-// TODO: remover função mockada
-export function* mockedLogin(action: LoginAction) {
-  yield put(changeLoadingAction(true));
-  yield put(changeLoadingMessageAction('Fazendo login...'));
-
-  const { email, password } = action.payload;
-  const centralNavigationService = CentralNavigationService<LoginStackParamList>();
-
-  yield put(authenticateAction());
-  const [authenticationError, authenticationSuccess]: RaceReturnType = yield race([
-    take(LoginActionTypes.AUTHENTICATION_ERROR),
-    take(LoginActionTypes.AUTHENTICATION_SUCCESS)
-  ]);
-
-  if (authenticationSuccess) {
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction(''));
-    yield put(changeRequestErrorAction(false));
-    centralNavigationService.navigate('dashboard');
-  } else {
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction('Erro ao fazer o login'));
-    yield put(changeRequestErrorAction(true));
-  }
-}
-
 export const loginSagas = all([
   takeLatest(LoginActionTypes.AUTHENTICATE, authenticate),
-  takeLatest(LoginActionTypes.LOGIN, mockedLogin),
+  takeLatest(LoginActionTypes.LOGIN, login),
   takeLatest(LoginActionTypes.LOGOUT, logout)
 ]);
