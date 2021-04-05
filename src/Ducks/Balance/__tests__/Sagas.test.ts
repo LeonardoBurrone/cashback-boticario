@@ -17,6 +17,7 @@ describe('Test Balance sagas', () => {
 
     const dispatched: any = await recordSaga(fetchBalance, fetchBalanceAction(), {});
 
+    expect(Api.get).toBeCalledWith('/balance');
     expect(dispatched[0].payload).toBe('100');
     expect(dispatched[0].type).toBe(BalanceActionTypes.CHANGE_BALANCE);
     expect(dispatched[1].payload).toBe(false);
@@ -29,6 +30,7 @@ describe('Test Balance sagas', () => {
 
     const dispatched: any = await recordSaga(fetchBalance, fetchBalanceAction(), {});
 
+    expect(Api.get).toBeCalledWith('/balance');
     expect(dispatched[0].payload).toBe('');
     expect(dispatched[0].type).toBe(BalanceActionTypes.CHANGE_BALANCE);
     expect(dispatched[1].payload).toBe(true);
