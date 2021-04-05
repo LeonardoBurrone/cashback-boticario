@@ -6,7 +6,7 @@ import { ButtonDiv, CBDialog } from './styles';
 
 import { changeRequestErrorAction } from '../../Ducks/AppStatus/Actions';
 
-const Load: React.FunctionComponent = () => {
+export const Load: React.FunctionComponent = () => {
   const loading = useSelector((state: reducers.rootReducer) => state.appStatus.loading);
   const loadingMessage = useSelector((state: reducers.rootReducer) => state.appStatus.loadingMessage);
   const requestFailed = useSelector((state: reducers.rootReducer) => state.appStatus.requestFailed);
