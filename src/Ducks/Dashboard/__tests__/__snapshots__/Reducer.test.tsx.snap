@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Dashboard Reducer Check reducer state after "changePuchasesAction" was dispatched 1`] = `
+Object {
+  "fetchPurchasesError": false,
+  "purchases": Array [
+    Object {
+      "cashbackPercentage": 0.01,
+      "cashbackValue": 1,
+      "date": "2021-04-01T08:15:30-03:00",
+      "id": 123,
+      "price": 100,
+      "status": "Approved",
+    },
+    Object {
+      "cashbackPercentage": 0.01,
+      "cashbackValue": 1,
+      "date": "2021-04-01T08:11:30-03:00",
+      "id": 123,
+      "price": 50,
+      "status": "Validating",
+    },
+    Object {
+      "cashbackPercentage": 0.01,
+      "cashbackValue": 1,
+      "date": "2021-04-01T08:19:30-03:00",
+      "id": 123,
+      "price": 30,
+      "status": "Rejected",
+    },
+  ],
+}
+`;
+
+exports[`Test Dashboard Reducer Check reducer state after "fetchPurchasesErrorAction" was dispatched 1`] = `
+Object {
+  "fetchPurchasesError": true,
+  "purchases": Array [],
+}
+`;
+
+exports[`Test Dashboard Reducer Check the initial state 1`] = `
+Object {
+  "fetchPurchasesError": false,
+  "purchases": Array [],
+}
+`;
