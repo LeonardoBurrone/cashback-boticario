@@ -96,15 +96,14 @@
       "cobertura",
       "html"
     ],
-    "rootDir": "./",
     "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.ts"
+      "./src/setupTests.ts"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
     "testMatch": [
-      "<rootDir>/**/?(*.)test.{ts,tsx}"
+      "./**/?(*.)test.{ts,tsx}"
     ]
   }
 }
