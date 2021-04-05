@@ -10,7 +10,7 @@ import { loginAction } from '../../Ducks/Login/Actions';
 import { validateEmail } from '../../Services/Validate';
 import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
-const Login: React.FunctionComponent = () => {
+export const Login: React.FunctionComponent = () => {
   const [email, setEmail] = useState<string>('');
   const [emailError, setEmailError] = useState<string>('');
   const [password, setPassword] = useState<string>('');

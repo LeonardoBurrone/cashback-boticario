@@ -1,4 +1,3 @@
-// TODO: testar actions
 import { RegisterActionTypes, RegisterPurchaseAction } from './types';
 
 export const registerPurchaseAction = (payload: {

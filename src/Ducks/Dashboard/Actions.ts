@@ -1,4 +1,3 @@
-// TODO: testar actions
 import {
   ChangePuchasesAction,
   DashboardActionTypes,

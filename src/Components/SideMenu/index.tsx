@@ -9,12 +9,12 @@ import Option from './Option';
 import { CBDrawer, OpenButtonDiv } from './styles';
 import { MenuOption } from './types';
 
-type Props = {
-  onCloseDrawer: () => void;
+export type Props = {
   isSideMenuOpened: boolean;
+  onCloseDrawer: () => void;
 };
 
-const SideMenu: React.FunctionComponent<Props> = (props: Props) => {
+export const SideMenu: React.FunctionComponent<Props> = (props: Props) => {
   const theme = useTheme();
 
   return (

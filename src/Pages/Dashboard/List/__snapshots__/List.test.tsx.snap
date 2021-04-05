@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test page List Check if component rendered correctly 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    key="1230"
+    xs={10}
+  >
+    <Styled(WithStyles(ForwardRef(Paper)))>
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Código
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          123
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor da compra
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$100
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Data
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          01/04/2021
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          % de cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          0.01%
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor do cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$1
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Status
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          Aprovado
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+    </Styled(WithStyles(ForwardRef(Paper)))>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    key="1231"
+    xs={10}
+  >
+    <Styled(WithStyles(ForwardRef(Paper)))>
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Código
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          123
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor da compra
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$50
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Data
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          01/04/2021
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          % de cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          0.01%
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor do cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$1
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Status
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          Em validação
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+    </Styled(WithStyles(ForwardRef(Paper)))>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    key="1232"
+    xs={10}
+  >
+    <Styled(WithStyles(ForwardRef(Paper)))>
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Código
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          123
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor da compra
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$30
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Data
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          01/04/2021
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          % de cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          0.01%
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Valor do cashback
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          R$1
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+      <WithStyles(ForwardRef(Divider)) />
+      <styled.div>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle1"
+        >
+          Status
+        </WithStyles(ForwardRef(Typography))>
+        <WithStyles(ForwardRef(Typography))
+          variant="subtitle2"
+        >
+          Rejeitado
+        </WithStyles(ForwardRef(Typography))>
+      </styled.div>
+    </Styled(WithStyles(ForwardRef(Paper)))>
+  </WithStyles(ForwardRef(Grid))>
+</Fragment>
+`;

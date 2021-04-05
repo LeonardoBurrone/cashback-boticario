@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Balance Actions Check if "changeBalanceAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": "50",
+    "type": "CHANGE_BALANCE",
+  },
+]
+`;
+
+exports[`Test Balance Actions Check if "changeBalanceErrorAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "CHANGE_BALANCE_ERROR",
+  },
+]
+`;
+
+exports[`Test Balance Actions Check if "fetchBalanceAction" was dispatched 1`] = `
+Array [
+  Object {
+    "type": "FETCH_BALANCE",
+  },
+]
+`;

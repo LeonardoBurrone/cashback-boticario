@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component Option Check if component rendered correctly 1`] = `
+<Route
+  path="/dashboard"
+>
+  <Component />
+</Route>
+`;

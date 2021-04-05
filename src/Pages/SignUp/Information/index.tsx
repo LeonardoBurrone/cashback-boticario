@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ToggleVisibility from '../../../Components/ToggleVisibility';
 import { CBTextField } from '../../../Styles/Common';
 
-type Props = {
+export type Props = {
   changeValue: (type: 'document' | 'email' | 'name' | 'password', value: string) => void;
   document: string;
   documentError: string;
@@ -16,7 +16,7 @@ type Props = {
   passwordError: string;
 };
 
-const Information: React.FunctionComponent<Props> = (props: Props) => {
+export const Information: React.FunctionComponent<Props> = (props: Props) => {
   const [showPassword, setShowPassword] = useState<boolean>(true);
 
   const changeValue = (type: 'document' | 'email' | 'name' | 'password') => (

@@ -10,7 +10,7 @@ import { fetchBalanceAction } from '../../Ducks/Balance/Actions';
 import { fetchPurchasesAction } from '../../Ducks/Dashboard/Actions';
 import { CBContainer, CBContent, CBToolbar } from '../../Styles/Common';
 
-const Dashboard: React.FunctionComponent = () => {
+export const Dashboard: React.FunctionComponent = () => {
   const balance = useSelector((state: reducers.rootReducer) => state.balance.balance);
   const balanceError = useSelector((state: reducers.rootReducer) => state.balance.balanceError);
   const fetchPurchasesError = useSelector((state: reducers.rootReducer) => state.dashboard.fetchPurchasesError);
@@ -62,7 +62,7 @@ const Dashboard: React.FunctionComponent = () => {
               {!balanceError && (
                 <>
                   <Typography variant="h5">Cashback acumulado</Typography>
-                  <Typography variant="h6">R${balance}</Typography>
+                  <Typography variant="h6">{`R$ ${balance}`}</Typography>
                 </>
               )}
             </Information>

@@ -10,12 +10,12 @@ import { MenuOption } from '../types';
 
 import { checkActivePath } from '../../../Services/BrowserHistory';
 
-type Props = {
+export type Props = {
   isSideMenuOpened: boolean;
   option: MenuOption;
 };
 
-const Option: React.FunctionComponent<Props> = (props: Props) => {
+export const Option: React.FunctionComponent<Props> = (props: Props) => {
   const theme = useTheme();
 
   return (

@@ -1,4 +1,3 @@
-// TODO: testar actions
 import { AuthenticateAction, LoginAction, LoginActionTypes, LogoutAction } from './types';
 
 export const authenticateAction = (): AuthenticateAction => ({

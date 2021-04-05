@@ -1,6 +1,5 @@
 import { MenuOption } from './types';
 
-// TODO: tipar
 export const menuOptions: MenuOption[] = [
   {
     description: 'Veja a listagem de suas compras cadastradas',

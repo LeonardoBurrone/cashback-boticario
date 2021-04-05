@@ -3,7 +3,7 @@ import React from 'react';
 
 import { CBContainer, CBGrid, CBLink } from './styles';
 
-type Props = {
+export type Props = {
   buttonDisabled: boolean;
   onClick: () => void;
   primaryButtonText: string;
@@ -12,7 +12,7 @@ type Props = {
   secondaryButtonText?: string;
 };
 
-const Footer: React.FunctionComponent<Props> = (props: Props) => {
+export const Footer: React.FunctionComponent<Props> = (props: Props) => {
   return (
     <CBContainer>
       <CBGrid>
