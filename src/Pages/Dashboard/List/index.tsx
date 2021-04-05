@@ -35,13 +35,13 @@ const List: React.FunctionComponent<Props> = (props: Props) => {
             <CBContent>
               {renderInformation('Código', `${purchase.id}`)}
               <Divider />
-              {renderInformation('Valor da compra', `${purchase.price}`)}
+              {renderInformation('Valor da compra', `R$${purchase.price}`)}
               <Divider />
               {renderInformation('Data', `${moment(purchase.date).format('DD/MM/YYYY')}`)}
               <Divider />
               {renderInformation('% de cashback', `${purchase.cashbackPercentage}%`)}
               <Divider />
-              {renderInformation('Valor do cashback', `${purchase.cashbackPercentage}`)}
+              {renderInformation('Valor do cashback', `R$${purchase.cashbackValue}`)}
               <Divider />
               {renderInformation('Status', `${translateStatus[purchase.status]}`)}
             </CBContent>
