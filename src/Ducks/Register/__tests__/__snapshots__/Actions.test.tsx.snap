@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Register Actions Check if "registerPurchaseAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "code": "1234",
+      "date": "01/01/2021",
+      "price": "50",
+    },
+    "type": "REGISTER_PURCHASE",
+  },
+]
+`;
