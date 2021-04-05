@@ -42,7 +42,6 @@ describe('Test Login sagas', () => {
     expect(dispatched[3].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
   });
 
-  /*
   it('Test login saga - success', async () => {
     Api.post = jest.fn(async () => Promise.resolve({}));
 
@@ -62,12 +61,13 @@ describe('Test Login sagas', () => {
     expect(dispatched[1].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
     expect(Api.post).toBeCalledWith('/login', { email: 'test@test.com', password: '123456' });
     expect(dispatched[2].type).toBe(LoginActionTypes.AUTHENTICATE);
-    expect(dispatched[3].payload).toBe(false);
-    expect(dispatched[3].type).toBe(AppStatusActionTypes.CHANGE_LOADING);
-    expect(dispatched[4].payload).toBe('');
-    expect(dispatched[4].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
-    expect(dispatched[5].payload).toBe(false);
-    expect(dispatched[5].type).toBe(AppStatusActionTypes.CHANGE_REQUEST_FAILED);
+    expect(dispatched[3].type).toBe(LoginActionTypes.AUTHENTICATION_SUCCESS);
+    expect(dispatched[4].payload).toBe(false);
+    expect(dispatched[4].type).toBe(AppStatusActionTypes.CHANGE_LOADING);
+    expect(dispatched[5].payload).toBe('');
+    expect(dispatched[5].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
+    expect(dispatched[6].payload).toBe(false);
+    expect(dispatched[6].type).toBe(AppStatusActionTypes.CHANGE_REQUEST_FAILED);
     expect(mockNavigation.navigate).toBeCalledWith('dashboard');
   });
 
@@ -90,12 +90,13 @@ describe('Test Login sagas', () => {
     expect(dispatched[1].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
     expect(Api.post).toBeCalledWith('/login', { email: 'test@test.com', password: '123456' });
     expect(dispatched[2].type).toBe(LoginActionTypes.AUTHENTICATE);
-    expect(dispatched[3].payload).toBe(false);
-    expect(dispatched[3].type).toBe(AppStatusActionTypes.CHANGE_LOADING);
-    expect(dispatched[4].payload).toBe('Erro ao fazer o login');
-    expect(dispatched[4].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
-    expect(dispatched[5].payload).toBe(true);
-    expect(dispatched[5].type).toBe(AppStatusActionTypes.CHANGE_REQUEST_FAILED);
+    expect(dispatched[3].type).toBe(LoginActionTypes.AUTHENTICATION_ERROR);
+    expect(dispatched[4].payload).toBe(false);
+    expect(dispatched[4].type).toBe(AppStatusActionTypes.CHANGE_LOADING);
+    expect(dispatched[5].payload).toBe('Erro ao fazer o login');
+    expect(dispatched[5].type).toBe(AppStatusActionTypes.CHANGE_LOADING_MESSAGE);
+    expect(dispatched[6].payload).toBe(true);
+    expect(dispatched[6].type).toBe(AppStatusActionTypes.CHANGE_REQUEST_FAILED);
   });
 
   it('Test login saga - api error', async () => {
@@ -124,5 +125,4 @@ describe('Test Login sagas', () => {
     expect(dispatched[4].payload).toBe(true);
     expect(dispatched[4].type).toBe(AppStatusActionTypes.CHANGE_REQUEST_FAILED);
   });
-  */
 });
