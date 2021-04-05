@@ -8,7 +8,7 @@ import { CBKeyboardDatePicker } from './styles';
 
 import { CBTextField } from '../../../Styles/Common';
 
-type Props = {
+export type Props = {
   changeValue: (type: 'code' | 'date' | 'price', value: string) => void;
   code: string;
   codeError: string;
@@ -18,7 +18,7 @@ type Props = {
   priceError: string;
 };
 
-const Information: React.FunctionComponent<Props> = (props: Props) => {
+export const Information: React.FunctionComponent<Props> = (props: Props) => {
   const [selectedDate, setSelectedDate] = React.useState<MaterialUiPickersDate>(null);
 
   const changeValue = (type: 'code' | 'price') => (event: React.ChangeEvent<HTMLInputElement>) => {
