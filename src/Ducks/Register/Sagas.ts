@@ -22,20 +22,4 @@ export function* registerPurchase(action: RegisterPurchaseAction) {
   }
 }
 
-// TODO: remover função mockada
-export function* mockedRegisterPurchase(action: RegisterPurchaseAction) {
-  try {
-    yield put(changeLoadingAction(true));
-    yield put(changeLoadingMessageAction('Cadastrando compra...'));
-
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction('Compra cadastrada com sucesso'));
-    yield put(changeRequestErrorAction(true));
-  } catch (error: any) {
-    yield put(changeLoadingAction(false));
-    yield put(changeLoadingMessageAction('Erro ao cadastrar compra'));
-    yield put(changeRequestErrorAction(true));
-  }
-}
-
-export const registerSagas = all([takeLatest(RegisterActionTypes.REGISTER_PURCHASE, mockedRegisterPurchase)]);
+export const registerSagas = all([takeLatest(RegisterActionTypes.REGISTER_PURCHASE, registerPurchase)]);
