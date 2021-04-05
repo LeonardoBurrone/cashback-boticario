@@ -54,13 +54,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-flow": "^7.13.13",
     "@types/enzyme": "^3.10.8",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
+    "babel-jest": "^26.6.3",
     "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.23.1",
@@ -71,8 +76,29 @@
     "styled-components": "^5"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/**.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/**.d.ts*",
+      "!src/serviceWorker.ts"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "cobertura",
+      "html"
+    ],
+    "rootDir": "./",
     "setupFilesAfterEnv": [
       "<rootDir>src/setupTests.ts"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testMatch": [
+      "<rootDir>/**/?(*.)test.{ts,tsx}"
     ]
   }
 }
