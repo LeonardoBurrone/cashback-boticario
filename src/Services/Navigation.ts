@@ -11,7 +11,7 @@ declare type StackNavigationProp<ParamList extends ParamListBase> = {
   ): void;
 };
 
-const CentralNavigationService = <T extends Record<string, object | undefined>>(): StackNavigationProp<T> => {
+export const CentralNavigationService = <T extends Record<string, object | undefined>>(): StackNavigationProp<T> => {
   return {
     navigate: async (...args: any[]) => {
       const routeName = args[0];

@@ -9,7 +9,7 @@ import {
   changeLoadingMessageAction,
   changeRequestErrorAction
 } from '../AppStatus/Actions';
-import CentralNavigationService from '../../Services/Navigation';
+import { CentralNavigationService } from '../../Services/Navigation';
 import Api from '../../Services/Api';
 
 export function* authenticate(action: AuthenticateAction) {
