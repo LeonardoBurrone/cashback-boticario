@@ -7,11 +7,11 @@ import { Information } from '../styles';
 import { Purchase } from '../../../Ducks/Dashboard/types';
 import { CBContent } from '../../../Styles/Common';
 
-type Props = {
+export type Props = {
   purchases: Purchase[];
 };
 
-const List: React.FunctionComponent<Props> = (props: Props) => {
+export const List: React.FunctionComponent<Props> = (props: Props) => {
   const translateStatus = {
     Approved: 'Aprovado',
     Rejected: 'Rejeitado',

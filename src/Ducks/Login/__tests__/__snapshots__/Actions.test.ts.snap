@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Login Actions Check if "authenticateAction" was dispatched 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATE",
+  },
+]
+`;
+
+exports[`Test Login Actions Check if "loginAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "test@test.com",
+      "password": "1234",
+    },
+    "type": "LOGIN",
+  },
+]
+`;
+
+exports[`Test Login Actions Check if "logoutAction" was dispatched 1`] = `
+Array [
+  Object {
+    "type": "LOGOUT",
+  },
+]
+`;

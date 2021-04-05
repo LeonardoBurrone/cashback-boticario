@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AppStatus Actions Check if "changeIsLoggedInAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "CHANGE_IS_LOGGED_IN",
+  },
+]
+`;
+
+exports[`Test AppStatus Actions Check if "changeLoadingAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "CHANGE_LOADING",
+  },
+]
+`;
+
+exports[`Test AppStatus Actions Check if "changeLoadingMessageAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": "Loading message...",
+    "type": "CHANGE_LOADING_MESSAGE",
+  },
+]
+`;
+
+exports[`Test AppStatus Actions Check if "changeRequestErrorAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": true,
+    "type": "CHANGE_REQUEST_FAILED",
+  },
+]
+`;

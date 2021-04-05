@@ -1,4 +1,3 @@
-// TODO: testar actions
 import { BalanceActionTypes, ChangeBalanceAction, ChangeBalanceErrorAction, FetchBalanceAction } from './types';
 
 export const changeBalanceAction = (payload: string): ChangeBalanceAction => ({

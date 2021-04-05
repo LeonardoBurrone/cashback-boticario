@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component ToggleVisibility Check if component rendered correctly 1`] = `
+<WithStyles(ForwardRef(InputAdornment))
+  position="end"
+>
+  <WithStyles(ForwardRef(IconButton))
+    aria-label="toggle visibility"
+    edge="end"
+    onClick={[MockFunction]}
+  >
+    <Memo(ForwardRef(VisibilityOffOutlinedIcon)) />
+  </WithStyles(ForwardRef(IconButton))>
+</WithStyles(ForwardRef(InputAdornment))>
+`;

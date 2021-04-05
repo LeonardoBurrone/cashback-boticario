@@ -17,7 +17,6 @@ const Api = {
       );
     });
   },
-  // TODO: tipar "any" do body?
   post: (url: string, body: any) => {
     return new Promise((resolve, reject) => {
       create.post(url, body).then(

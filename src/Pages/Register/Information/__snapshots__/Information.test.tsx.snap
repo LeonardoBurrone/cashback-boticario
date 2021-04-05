@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component Information Check if component rendered correctly 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+  spacing={1}
+>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={12}
+  >
+    <Styled(WithStyles(ForwardRef(TextField)))
+      autoFocus={true}
+      error={false}
+      helperText="Insira o código da compra"
+      id="code"
+      label="Código"
+      margin="normal"
+      onChange={[Function]}
+      value=""
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={12}
+  >
+    <Styled(WithStyles(ForwardRef(TextField)))
+      error={false}
+      helperText="Insira o valor da compra"
+      id="price"
+      label="Valor"
+      margin="normal"
+      onChange={[Function]}
+      type="number"
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={12}
+  >
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <Styled(PickerWithState)
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "change date",
+          }
+        }
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        id="date-picker-inline"
+        label="Selecione a data da compra"
+        margin="normal"
+        onChange={[Function]}
+        value={null}
+        variant="inline"
+      />
+    </MuiPickersUtilsProvider>
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;

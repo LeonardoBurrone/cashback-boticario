@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AppStatus Reducer Check reducer state after "changeIsLoggedInAction" was dispatched 1`] = `
+Object {
+  "isLoggedIn": true,
+  "loading": false,
+  "loadingMessage": "",
+  "requestFailed": false,
+}
+`;
+
+exports[`Test AppStatus Reducer Check reducer state after "changeLoadingAction" was dispatched 1`] = `
+Object {
+  "isLoggedIn": false,
+  "loading": true,
+  "loadingMessage": "",
+  "requestFailed": false,
+}
+`;
+
+exports[`Test AppStatus Reducer Check reducer state after "changeLoadingMessageAction" was dispatched 1`] = `
+Object {
+  "isLoggedIn": false,
+  "loading": false,
+  "loadingMessage": "Loading message...",
+  "requestFailed": false,
+}
+`;
+
+exports[`Test AppStatus Reducer Check reducer state after "changeRequestErrorAction" was dispatched 1`] = `
+Object {
+  "isLoggedIn": false,
+  "loading": false,
+  "loadingMessage": "",
+  "requestFailed": true,
+}
+`;
+
+exports[`Test AppStatus Reducer Check the initial state 1`] = `
+Object {
+  "isLoggedIn": false,
+  "loading": false,
+  "loadingMessage": "",
+  "requestFailed": false,
+}
+`;

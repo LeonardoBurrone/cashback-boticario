@@ -1,4 +1,3 @@
-// TODO: testar reducer
 import { Reducer } from 'redux';
 
 import { AppStatusActionTypes, AppStatusState } from './types';

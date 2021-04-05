@@ -10,7 +10,7 @@ import { CBAppBar, CBButtonDiv, ContrastButton, LogoImg } from './styles';
 
 import Logo from '../../Assets/logo.svg';
 
-type Props = {
+export type Props = {
   doLogout: () => void;
   isDarkMode: boolean;
   isLoggedIn: boolean;
@@ -19,7 +19,7 @@ type Props = {
   toggleTheme: () => void;
 };
 
-const AppBar: React.FunctionComponent<Props> = (props: Props) => {
+export const AppBar: React.FunctionComponent<Props> = (props: Props) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const theme = useTheme();
 
