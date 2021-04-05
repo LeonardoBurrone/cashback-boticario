@@ -1,0 +1,284 @@
+{
+  "login": {},
+  "sign-up": {},
+  "register": {},
+  "balance": {
+    "balance": 125.33
+  },
+  "purchases": {
+    "purchases": [
+      {
+        "id": 123,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 124,
+        "price": 1000,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.005,
+        "cashbackValue": 5,
+        "status": "Validating"
+      },
+      {
+        "id": 125,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Rejected"
+      },
+      {
+        "id": 126,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 127,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 128,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 129,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 130,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 150,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 151,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 190,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 230,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 124,
+        "price": 1000,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.005,
+        "cashbackValue": 5,
+        "status": "Validating"
+      },
+      {
+        "id": 125,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Rejected"
+      },
+      {
+        "id": 126,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 127,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 128,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 129,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 130,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 150,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 151,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 190,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 230,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 124,
+        "price": 1000,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.005,
+        "cashbackValue": 5,
+        "status": "Validating"
+      },
+      {
+        "id": 125,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Rejected"
+      },
+      {
+        "id": 126,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 127,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 128,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 129,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 130,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 150,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 151,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 190,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      },
+      {
+        "id": 230,
+        "price": 100,
+        "date": "2021-04-01T08:15:30-03:00",
+        "cashbackPercentage": 0.01,
+        "cashbackValue": 1,
+        "status": "Approved"
+      }
+    ]
+  }
+}
