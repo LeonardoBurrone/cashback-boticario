@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Balance Reducer Check reducer state after "changeBalanceAction" was dispatched 1`] = `
+Object {
+  "balance": "50",
+  "balanceError": false,
+}
+`;
+
+exports[`Test Balance Reducer Check reducer state after "changeBalanceErrorAction" was dispatched 1`] = `
+Object {
+  "balance": "",
+  "balanceError": true,
+}
+`;
+
+exports[`Test Balance Reducer Check the initial state 1`] = `
+Object {
+  "balance": "",
+  "balanceError": false,
+}
+`;
