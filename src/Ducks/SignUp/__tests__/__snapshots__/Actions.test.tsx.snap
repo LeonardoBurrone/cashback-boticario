@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Sign Up Actions Check if "signUpAction" was dispatched 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "document": "11122233345",
+      "email": "test@test.com",
+      "name": "Test Name",
+      "password": "123456",
+    },
+    "type": "SIGN_UP",
+  },
+]
+`;

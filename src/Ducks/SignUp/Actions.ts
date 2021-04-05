@@ -1,4 +1,3 @@
-// TODO: testar actions
 import { SignActionTypes, SignUpAction } from './types';
 
 export const signUpAction = (payload: {
