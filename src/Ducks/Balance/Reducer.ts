@@ -1,4 +1,3 @@
-// TODO: testar reducer
 import { Reducer } from 'redux';
 
 import { BalanceActionTypes, BalanceState } from './types';
