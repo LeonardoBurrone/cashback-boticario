@@ -1,33 +1,82 @@
-# Getting Started with Create React App
+# Cashback Revendedor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Cashback Revendedor** is a React application for the Boticário retailers to manage their purchases' cashbacks.\
+To read more about the project features read the file "Desafio - Front.pdf" inside the project.
+
+## Table Of Contents
+
+- Prerequisites
+- Architecture Pattern
+- Interface
+- Integration
+- Testing
+- Dependencies
+- How to use the mocked APIs to be able to see the integration
+- Available Scripts
+  - "yarn start"
+  - "yarn build"
+  - "yarn test"
+  - "yarn eject"
+- Useful links
+
+## Prerequisites
+
+- NodeJs
+- Yarn
+
+## Architecture Pattern
+
+The project was architectured to use the predictable state container **Redux** to separate the UI layer from the logical layer.\
+Every module related to Redux was structured using the **Ducks pattern**.
+
+## Interface
+
+**Material-UI** framework and **styled components** library were used to be able to build, develop and style faster components.
+
+## Integration
+
+The application needs working APIs so the user can access all features.\
+In order to do that, the application **json-server** was used to mock fake REST APIs.
+
+## Testing
+
+The testing framework **Jest** combined with the testing utility **Enzyme** were used to test the application.
+
+## Dependencies
+
+Use the following command inside the root folder to install the dependencies.
+
+> yarn
+
+## How to use the mocked APIs to be able to see the integration
+
+Install the application **json-server** with the command
+
+> npm install -g json-server
+
+Run the following command inside the root folder
+
+> json-server --watch db.json
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The page will reload if you make edits.
 
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `yarn test`
+
+Run application tests and generate a coverage report to the `coverage` folder.
 
 ### `yarn eject`
 
@@ -39,8 +88,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Useful links
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Enzyme](https://enzymejs.github.io/enzyme/index.html)
+- [Jest](https://jestjs.io/)
+- [json-server](https://github.com/typicode/json-server)
+- [Material-UI](https://material-ui.com/)
+- [Node](https://nodejs.org/en/)
+- [React](https://https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [styled components](https://styled-components.com/)
+- [Yarn](https://yarnpkg.com/)
