@@ -20,10 +20,6 @@ describe('Test component Footer', () => {
     wrapper = shallow(<Footer {...props} />);
   });
 
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
   it('Check if component rendered correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
