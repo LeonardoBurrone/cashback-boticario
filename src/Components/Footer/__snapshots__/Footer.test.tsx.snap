@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component Footer Check if component rendered correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <WithStyles(ForwardRef(Grid))
+      alignItems="center"
+      container={true}
+      justify="flex-end"
+      spacing={3}
+    >
+      <WithStyles(ForwardRef(Button))
+        color="secondary"
+        disabled={true}
+        onClick={[MockFunction]}
+        variant="contained"
+      >
+        Cadastre-se
+      </WithStyles(ForwardRef(Button))>
+    </WithStyles(ForwardRef(Grid))>
+  </styled.div>
+</styled.div>
+`;
